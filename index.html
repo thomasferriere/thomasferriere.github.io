@@ -1,96 +1,92 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thomas Ferriere &mdash; Développeur</title>
+  <title>Thomas Ferriere — Développeur</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <!-- ===== NAVIGATION ===== -->
-  <header class="nav-header">
+  <!-- ===== NAV ===== -->
+  <header class="nav-header" id="nav-header">
     <nav class="nav container">
-      <a href="#" class="nav__logo">TF<span class="accent">.</span></a>
+      <a href="#" class="nav__logo">Thomas Ferriere</a>
+
       <ul class="nav__links" id="nav-links">
-        <li><a href="#about"    class="nav__link">À propos</a></li>
-        <li><a href="#skills"   class="nav__link">Compétences</a></li>
-        <li><a href="#projects" class="nav__link">Projets</a></li>
-        <li><a href="#contact"  class="nav__link">Contact</a></li>
+        <li><a href="#about"     class="nav__link" data-i18n="nav.about">À propos</a></li>
+        <li><a href="#education" class="nav__link" data-i18n="nav.education">Formation</a></li>
+        <li><a href="#skills"    class="nav__link" data-i18n="nav.skills">Compétences</a></li>
+        <li><a href="#projects"  class="nav__link" data-i18n="nav.projects">Projets</a></li>
+        <li><a href="#contact"   class="nav__link" data-i18n="nav.contact">Contact</a></li>
       </ul>
-      <button class="nav__toggle" id="nav-toggle" aria-label="Ouvrir le menu">
-        <span></span><span></span><span></span>
-      </button>
+
+      <div class="nav__right">
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button class="lang-btn active" data-lang="fr">FR</button>
+          <button class="lang-btn"        data-lang="en">EN</button>
+        </div>
+        <button class="nav__toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </nav>
   </header>
 
   <main>
 
-    <!-- ===== HERO / À PROPOS ===== -->
+    <!-- ===== HERO ===== -->
     <section class="hero" id="about">
       <div class="container hero__inner">
-        <div class="hero__text">
-          <p class="hero__greeting">Bonjour, je suis</p>
-          <h1 class="hero__name">Thomas Ferriere<span class="accent">.</span></h1>
-          <h2 class="hero__title">
-            <span class="typewriter" id="typewriter"></span><span class="cursor">|</span>
-          </h2>
-          <p class="hero__bio">
-            Étudiant en Licence 3 Informatique à l&rsquo;Université de La Réunion,
-            candidat au Master Informatique &amp; IA. Passionné par l&rsquo;administration
-            système, le développement web et mobile, et l&rsquo;automatisation.
-            J&rsquo;aime construire des outils concrets qui résolvent de vrais problèmes.
-          </p>
-          <div class="hero__cta">
-            <a href="#projects" class="btn btn--primary">Voir mes projets</a>
-            <a href="#contact"  class="btn btn--outline">Me contacter</a>
-          </div>
-        </div>
-        <div class="hero__avatar" aria-hidden="true">
-          <div class="avatar-ring">
-            <div class="avatar-initials">TF</div>
-          </div>
-          <div class="avatar-blob blob-1"></div>
-          <div class="avatar-blob blob-2"></div>
+        <p class="hero__eyebrow" data-i18n="hero.greeting">Bonjour, je suis</p>
+        <h1 class="hero__name">Thomas Ferriere</h1>
+        <p class="hero__role">
+          <span class="typewriter-text" id="typewriter"></span><span class="cursor">|</span>
+        </p>
+        <p class="hero__bio" data-i18n="hero.bio">
+          Étudiant en Licence 3 Informatique à l&rsquo;Université de La Réunion, candidat au
+          Master Informatique &amp; IA. Passionné par le développement, l&rsquo;administration
+          système et l&rsquo;automatisation.
+        </p>
+        <div class="hero__actions">
+          <a href="#projects" class="btn btn--fill"  data-i18n="hero.cta.projects">Voir mes projets</a>
+          <a href="#contact"  class="btn btn--arrow" data-i18n="hero.cta.contact">Me contacter</a>
         </div>
       </div>
-      <div class="scroll-indicator" aria-hidden="true"><span></span></div>
     </section>
 
     <!-- ===== FORMATION ===== -->
-    <section class="section section--alt" id="education">
+    <section class="section" id="education">
       <div class="container">
-        <h2 class="section__title">Formation<span class="accent">.</span></h2>
-        <p class="section__subtitle">Mon parcours académique</p>
+        <header class="section__header">
+          <p class="section__label" data-i18n="nav.education">Formation</p>
+          <h2 class="section__title" data-i18n="section.education.sub">Parcours académique</h2>
+        </header>
 
         <div class="timeline">
 
-          <div class="timeline__item">
-            <div class="timeline__meta">
-              <span class="timeline__date">2023 &ndash; 2026</span>
-            </div>
+          <div class="timeline__item reveal">
+            <p class="timeline__year" data-i18n="edu.l3.years">2023 &ndash; 2026</p>
             <div class="timeline__body">
-              <h3 class="timeline__title">Licence 3 Informatique</h3>
-              <p class="timeline__place">Université de La Réunion &mdash; Campus du Moufia</p>
-              <ul class="timeline__list">
-                <li>Algorithmique, POO, bases de données, réseaux, systèmes d&rsquo;exploitation</li>
-                <li>Projets : développement Android (Java), analyse de données (R), modélisation UML</li>
+              <h3 class="timeline__degree" data-i18n="edu.l3.degree">Licence 3 Informatique</h3>
+              <p class="timeline__school" data-i18n="edu.l3.school">Université de La Réunion &mdash; Campus du Moufia</p>
+              <ul class="timeline__details">
+                <li data-i18n="edu.l3.detail1">Algorithmique, POO, bases de données, réseaux, systèmes d&rsquo;exploitation</li>
+                <li data-i18n="edu.l3.detail2">Projets : Android (Java), analyse de données (R), modélisation UML</li>
               </ul>
             </div>
           </div>
 
-          <div class="timeline__item">
-            <div class="timeline__meta">
-              <span class="timeline__date">2022</span>
-            </div>
+          <div class="timeline__item reveal">
+            <p class="timeline__year" data-i18n="edu.bac.years">2022</p>
             <div class="timeline__body">
-              <h3 class="timeline__title">Baccalauréat Général</h3>
-              <p class="timeline__place">Lycée Marie Curie &mdash; La Réunion</p>
-              <ul class="timeline__list">
-                <li>Spécialités : Mathématiques et NSI (Numérique &amp; Sciences Informatiques)</li>
+              <h3 class="timeline__degree" data-i18n="edu.bac.degree">Baccalauréat Général</h3>
+              <p class="timeline__school" data-i18n="edu.bac.school">Lycée Marie Curie &mdash; La Réunion</p>
+              <ul class="timeline__details">
+                <li data-i18n="edu.bac.detail1">Spécialités : Mathématiques et NSI (Numérique &amp; Sciences Informatiques)</li>
               </ul>
             </div>
           </div>
@@ -100,74 +96,68 @@
     </section>
 
     <!-- ===== COMPÉTENCES ===== -->
-    <section class="section" id="skills">
+    <section class="section section--tinted" id="skills">
       <div class="container">
-        <h2 class="section__title">Compétences<span class="accent">.</span></h2>
-        <p class="section__subtitle">Technologies et outils que j&rsquo;utilise au quotidien</p>
+        <header class="section__header">
+          <p class="section__label" data-i18n="nav.skills">Compétences</p>
+          <h2 class="section__title" data-i18n="section.skills.sub">Technologies et outils</h2>
+        </header>
 
         <div class="skills__grid">
-
-          <div class="skill-card">
-            <div class="skill-card__icon">&#60;/&#62;</div>
-            <h3 class="skill-card__title">Langages</h3>
-            <ul class="skill-list">
-              <li class="skill-tag">Java</li>
-              <li class="skill-tag">Python</li>
-              <li class="skill-tag">JavaScript</li>
-              <li class="skill-tag">HTML / CSS</li>
-              <li class="skill-tag">SQL</li>
-              <li class="skill-tag">R</li>
-              <li class="skill-tag">Shell / Bash</li>
-            </ul>
+          <div class="skill-group reveal">
+            <h3 class="skill-group__label" data-i18n="skills.languages">Langages</h3>
+            <div class="tags">
+              <span class="tag">Java</span>
+              <span class="tag">Python</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">HTML / CSS</span>
+              <span class="tag">SQL</span>
+              <span class="tag">R</span>
+              <span class="tag">Shell / Bash</span>
+            </div>
           </div>
 
-          <div class="skill-card">
-            <div class="skill-card__icon">&#9881;</div>
-            <h3 class="skill-card__title">Outils &amp; Environnements</h3>
-            <ul class="skill-list">
-              <li class="skill-tag">Git / GitLab</li>
-              <li class="skill-tag">Docker</li>
-              <li class="skill-tag">Android Studio</li>
-              <li class="skill-tag">VirtualBox</li>
-              <li class="skill-tag">Linux (Debian)</li>
-              <li class="skill-tag">Brython</li>
-            </ul>
+          <div class="skill-group reveal">
+            <h3 class="skill-group__label" data-i18n="skills.tools">Outils &amp; Environnements</h3>
+            <div class="tags">
+              <span class="tag">Git / GitLab</span>
+              <span class="tag">Docker</span>
+              <span class="tag">Android Studio</span>
+              <span class="tag">VirtualBox</span>
+              <span class="tag">Linux Debian</span>
+              <span class="tag">Brython</span>
+            </div>
           </div>
 
-          <div class="skill-card">
-            <div class="skill-card__icon">&#9729;</div>
-            <h3 class="skill-card__title">Systèmes &amp; Réseaux</h3>
-            <ul class="skill-list">
-              <li class="skill-tag">Administration Linux</li>
-              <li class="skill-tag">DNS / TCP-IP</li>
-              <li class="skill-tag">Pare-feu</li>
-              <li class="skill-tag">Tailscale</li>
-              <li class="skill-tag">MySQL / SQLite</li>
-              <li class="skill-tag">UML</li>
-            </ul>
+          <div class="skill-group reveal">
+            <h3 class="skill-group__label" data-i18n="skills.systems">Systèmes &amp; Réseaux</h3>
+            <div class="tags">
+              <span class="tag">Admin Linux</span>
+              <span class="tag">DNS / TCP-IP</span>
+              <span class="tag">Pare-feu</span>
+              <span class="tag">Tailscale</span>
+              <span class="tag">MySQL / SQLite</span>
+              <span class="tag">UML</span>
+            </div>
           </div>
-
         </div>
 
-        <!-- Certifications -->
-        <div class="certs">
-          <h3 class="certs__title">Certifications</h3>
-          <div class="certs__grid">
-            <div class="cert-card">
-              <span class="cert-card__badge">&#9733;</span>
-              <div>
-                <p class="cert-card__name">SecNumacadémie &mdash; ANSSI</p>
-                <p class="cert-card__desc">MOOC cybersécurité &mdash; 100&nbsp;% aux 4 modules</p>
+        <div class="certs reveal">
+          <p class="certs__label" data-i18n="section.certs">Certifications</p>
+          <div class="certs__row">
+            <div class="cert">
+              <div class="cert__main">
+                <p class="cert__name" data-i18n="cert.anssi.name">SecNumacadémie &mdash; ANSSI</p>
+                <p class="cert__detail" data-i18n="cert.anssi.detail">MOOC cybersécurité &middot; 100&nbsp;% aux 4 modules</p>
               </div>
-              <span class="cert-card__date">Mars 2024</span>
+              <span class="cert__date" data-i18n="cert.anssi.date">Mars 2024</span>
             </div>
-            <div class="cert-card">
-              <span class="cert-card__badge">&#9733;</span>
-              <div>
-                <p class="cert-card__name">Certification Pix &mdash; Niveau Avancé 1</p>
-                <p class="cert-card__desc">Score 532/895 &mdash; Université de La Réunion</p>
+            <div class="cert">
+              <div class="cert__main">
+                <p class="cert__name" data-i18n="cert.pix.name">Certification Pix &mdash; Niveau Avancé 1</p>
+                <p class="cert__detail" data-i18n="cert.pix.detail">Score 532/895 &middot; Université de La Réunion</p>
               </div>
-              <span class="cert-card__date">Déc. 2025</span>
+              <span class="cert__date" data-i18n="cert.pix.date">Déc. 2025</span>
             </div>
           </div>
         </div>
@@ -176,93 +166,88 @@
     </section>
 
     <!-- ===== PROJETS ===== -->
-    <section class="section section--alt" id="projects">
+    <section class="section" id="projects">
       <div class="container">
-        <h2 class="section__title">Projets<span class="accent">.</span></h2>
-        <p class="section__subtitle">Ce que j&rsquo;ai conçu et développé</p>
+        <header class="section__header">
+          <p class="section__label" data-i18n="nav.projects">Projets</p>
+          <h2 class="section__title" data-i18n="section.projects.sub">Ce que j&rsquo;ai construit</h2>
+        </header>
 
         <div class="projects__grid">
 
-          <article class="project-card">
-            <div class="project-card__header">
-              <span class="project-card__number">01</span>
-              <span class="project-card__type">Projet personnel</span>
-            </div>
-            <h3 class="project-card__title">Serveur Linux / Homelab</h3>
-            <p class="project-card__desc">
-              Serveur maison complet sous Linux : montage SSD (fstab), partage Samba,
-              déploiement Docker (Jellyfin, Portainer, Pi-hole, KodExplorer),
-              monitoring via Netdata &amp; Uptime Kuma, API Flask de supervision
-              et réseau privé sécurisé via Tailscale (MagicDNS).
+          <article class="project reveal">
+            <p class="project__type" data-i18n="project.type.personal">Projet personnel</p>
+            <h3 class="project__title" data-i18n="proj.homelab.title">Serveur Linux / Homelab</h3>
+            <p class="project__desc" data-i18n="proj.homelab.desc">
+              Serveur maison complet sous Linux avec Docker (Jellyfin, Portainer, Pi-hole),
+              monitoring Netdata &amp; Uptime Kuma, API Flask de supervision et réseau
+              privé sécurisé via Tailscale.
             </p>
-            <ul class="project-card__tags">
-              <li>Linux</li><li>Docker</li><li>Flask</li><li>Tailscale</li><li>Bash</li>
-            </ul>
+            <div class="tags tags--sm">
+              <span class="tag">Linux</span>
+              <span class="tag">Docker</span>
+              <span class="tag">Flask</span>
+              <span class="tag">Tailscale</span>
+              <span class="tag">Bash</span>
+            </div>
           </article>
 
-          <article class="project-card">
-            <div class="project-card__header">
-              <span class="project-card__number">02</span>
-              <span class="project-card__type">Projet universitaire</span>
-            </div>
-            <h3 class="project-card__title">Applications Android</h3>
-            <p class="project-card__desc">
-              Conception et développement d&rsquo;applications mobiles en Java avec
-              Android Studio. Implémentation d&rsquo;interfaces utilisateur (XML)
-              et intégration d&rsquo;API externes pour des fonctionnalités interactives.
+          <article class="project reveal">
+            <p class="project__type" data-i18n="project.type.uni">Projet universitaire</p>
+            <h3 class="project__title" data-i18n="proj.android.title">Applications Android</h3>
+            <p class="project__desc" data-i18n="proj.android.desc">
+              Conception et développement d&rsquo;applications mobiles en Java avec Android Studio.
+              Interfaces XML et intégration d&rsquo;API REST.
             </p>
-            <ul class="project-card__tags">
-              <li>Java</li><li>Android Studio</li><li>XML</li><li>API REST</li>
-            </ul>
+            <div class="tags tags--sm">
+              <span class="tag">Java</span>
+              <span class="tag">Android Studio</span>
+              <span class="tag">XML</span>
+              <span class="tag">API REST</span>
+            </div>
           </article>
 
-          <article class="project-card">
-            <div class="project-card__header">
-              <span class="project-card__number">03</span>
-              <span class="project-card__type">Projet universitaire</span>
-            </div>
-            <h3 class="project-card__title">Analyse de données</h3>
-            <p class="project-card__desc">
-              Traitements statistiques et visualisations de données sous R.
-              Utilisation de méthodes exploratoires (ACP, clustering, régression)
-              pour interpréter et présenter les résultats.
+          <article class="project reveal">
+            <p class="project__type" data-i18n="project.type.uni">Projet universitaire</p>
+            <h3 class="project__title" data-i18n="proj.data.title">Analyse de données</h3>
+            <p class="project__desc" data-i18n="proj.data.desc">
+              Traitements statistiques et visualisations sous R. Méthodes exploratoires
+              (ACP, clustering, régression) pour interpréter les résultats.
             </p>
-            <ul class="project-card__tags">
-              <li>R</li><li>Statistiques</li><li>Visualisation</li><li>UML</li>
-            </ul>
+            <div class="tags tags--sm">
+              <span class="tag">R</span>
+              <span class="tag">Statistiques</span>
+              <span class="tag">Visualisation</span>
+              <span class="tag">UML</span>
+            </div>
           </article>
 
-          <article class="project-card">
-            <div class="project-card__header">
-              <span class="project-card__number">04</span>
-              <span class="project-card__type">Projet entrepreneurial</span>
-            </div>
-            <h3 class="project-card__title">Gestion de ventes</h3>
-            <p class="project-card__desc">
-              Organisation et automatisation de la vente de gâteaux : suivi des
-              commandes, stocks et recettes via Excel (tableaux croisés dynamiques,
-              formules avancées, reporting automatisé).
+          <article class="project reveal">
+            <p class="project__type" data-i18n="project.type.entrepreneur">Projet entrepreneurial</p>
+            <h3 class="project__title" data-i18n="proj.sales.title">Gestion de ventes</h3>
+            <p class="project__desc" data-i18n="proj.sales.desc">
+              Automatisation de la gestion via Excel : tableaux croisés dynamiques,
+              formules avancées et reporting automatisé pour le suivi des commandes et recettes.
             </p>
-            <ul class="project-card__tags">
-              <li>Excel</li><li>Automatisation</li><li>Reporting</li>
-            </ul>
+            <div class="tags tags--sm">
+              <span class="tag">Excel</span>
+              <span class="tag">Automatisation</span>
+              <span class="tag">Reporting</span>
+            </div>
           </article>
 
-          <article class="project-card">
-            <div class="project-card__header">
-              <span class="project-card__number">05</span>
-              <span class="project-card__type">Stage d&rsquo;observation</span>
-            </div>
-            <h3 class="project-card__title">Enseignement NSI</h3>
-            <p class="project-card__desc">
-              Observation des pratiques pédagogiques d&rsquo;un enseignant en
-              Numérique &amp; Sciences Informatiques au Lycée Lislet Geoffroy.
-              Participation à la préparation de contenus et réflexion sur la
-              didactique informatique.
+          <article class="project reveal">
+            <p class="project__type" data-i18n="project.type.intern">Stage d&rsquo;observation</p>
+            <h3 class="project__title" data-i18n="proj.nsi.title">Enseignement NSI</h3>
+            <p class="project__desc" data-i18n="proj.nsi.desc">
+              Observation pédagogique au Lycée Lislet Geoffroy. Participation à la préparation
+              de contenus en Numérique &amp; Sciences Informatiques.
             </p>
-            <ul class="project-card__tags">
-              <li>NSI</li><li>Pédagogie</li><li>La Réunion</li>
-            </ul>
+            <div class="tags tags--sm">
+              <span class="tag">NSI</span>
+              <span class="tag">Pédagogie</span>
+              <span class="tag">La Réunion</span>
+            </div>
           </article>
 
         </div>
@@ -270,68 +255,77 @@
     </section>
 
     <!-- ===== CONTACT ===== -->
-    <section class="section" id="contact">
-      <div class="container contact__inner">
-        <div class="contact__text">
-          <h2 class="section__title">Contact<span class="accent">.</span></h2>
-          <p class="section__subtitle">Construisons quelque chose ensemble</p>
-          <p class="contact__desc">
+    <section class="section section--tinted" id="contact">
+      <div class="container contact__wrap">
+
+        <div class="contact__info">
+          <header class="section__header section__header--left">
+            <p class="section__label" data-i18n="nav.contact">Contact</p>
+            <h2 class="section__title" data-i18n="section.contact.sub">Construisons quelque chose ensemble</h2>
+          </header>
+          <p class="contact__desc" data-i18n="contact.desc">
             Que vous ayez un projet, une opportunité ou simplement envie d&rsquo;échanger
             &mdash; je suis disponible et je réponds rapidement.
           </p>
 
-          <ul class="contact__info">
+          <ul class="contact__list">
             <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               <a href="mailto:tferrierepro@icloud.com">tferrierepro@icloud.com</a>
             </li>
             <li>
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
               <a href="https://github.com/thomasferriere" target="_blank" rel="noopener noreferrer">github.com/thomasferriere</a>
             </li>
             <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-              <span>La Réunion, France</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              <span data-i18n="contact.location">La Réunion, France</span>
             </li>
           </ul>
 
-          <div class="contact__langs">
-            <span class="lang-badge">&#127467;&#127479; Français &mdash; natif</span>
-            <span class="lang-badge">&#127468;&#127463; Anglais &mdash; B1</span>
+          <div class="lang-chips">
+            <span class="lang-chip" data-i18n="lang.fr">&#127467;&#127479; Français &mdash; natif</span>
+            <span class="lang-chip" data-i18n="lang.en">&#127468;&#127463; Anglais &mdash; B1</span>
           </div>
         </div>
 
         <form class="contact__form" id="contact-form" novalidate>
           <div class="form-group">
-            <label for="name">Nom</label>
-            <input type="text" id="name" name="name" placeholder="Votre nom" required />
+            <label for="name" data-i18n="form.name">Nom</label>
+            <input type="text" id="name" name="name"
+              data-i18n-placeholder="form.name.ph"
+              placeholder="Votre nom" required />
             <span class="form-error" id="name-error"></span>
           </div>
           <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="votre@email.com" required />
+            <label for="email" data-i18n="form.email">Email</label>
+            <input type="email" id="email" name="email"
+              data-i18n-placeholder="form.email.ph"
+              placeholder="votre@email.com" required />
             <span class="form-error" id="email-error"></span>
           </div>
           <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Votre message..." required></textarea>
+            <label for="message" data-i18n="form.message">Message</label>
+            <textarea id="message" name="message" rows="5"
+              data-i18n-placeholder="form.message.ph"
+              placeholder="Votre message..." required></textarea>
             <span class="form-error" id="message-error"></span>
           </div>
-          <button type="submit" class="btn btn--primary btn--full" id="submit-btn">
-            <span class="btn__text">Envoyer</span>
-            <span class="btn__sent" hidden>Envoyé !</span>
+          <button type="submit" class="btn btn--fill btn--full" id="submit-btn">
+            <span class="btn__text" data-i18n="form.submit">Envoyer</span>
+            <span class="btn__sent" hidden data-i18n="form.sent">Envoyé !</span>
           </button>
         </form>
+
       </div>
     </section>
 
   </main>
 
-  <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="container footer__inner">
-      <p>&copy; <span id="year"></span> Thomas Ferriere &mdash; Étudiant en Informatique, La Réunion</p>
-      <a href="#" class="back-to-top" aria-label="Haut de page">&#8593;</a>
+      <p>&copy; <span id="year"></span> Thomas Ferriere &mdash; La Réunion</p>
+      <a href="#" class="back-to-top" aria-label="Retour en haut">&#8593;</a>
     </div>
   </footer>
 
