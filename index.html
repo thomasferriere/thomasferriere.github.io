@@ -47,17 +47,30 @@
          HERO
     ====================================================== -->
     <section class="hero" id="hero">
-      <div class="container">
-        <p class="hero__eyebrow fade-up" data-i18n="hero.eyebrow">Développeur &amp; Étudiant en Informatique</p>
+
+      <!-- Abstract background layer -->
+      <div class="hero__bg" aria-hidden="true">
+        <div class="blob blob-a"></div>
+        <div class="blob blob-b"></div>
+        <div class="blob blob-c"></div>
+        <div class="hero__dots"></div>
+      </div>
+
+      <div class="container hero__inner">
+        <p class="hero__tag fade-up" data-i18n="hero.eyebrow">Développeur &amp; Étudiant en Informatique</p>
         <h1 class="hero__title fade-up delay-1">Thomas<br>Ferriere</h1>
         <p class="hero__sub fade-up delay-2" data-i18n="hero.sub">
           Je conçois et construis des applications propres, performantes et bien pensées.
         </p>
         <div class="hero__actions fade-up delay-3">
-          <a href="#projects" class="btn btn--dark"    data-i18n="hero.cta.work">Voir mes projets</a>
-          <a href="#contact"  class="btn btn--outline" data-i18n="hero.cta.contact">Me contacter</a>
+          <a href="#projects" class="btn btn--white" data-i18n="hero.cta.work">Voir mes projets</a>
+          <a href="#contact"  class="btn btn--glass" data-i18n="hero.cta.contact">Me contacter</a>
         </div>
       </div>
+
+      <!-- Smooth dissolve into the next section -->
+      <div class="hero__fade" aria-hidden="true"></div>
+
     </section>
 
     <!-- ======================================================
