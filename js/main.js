@@ -3,13 +3,13 @@
 /* ================================================================
    TRANSLATIONS
    All user-visible text, keyed by ID.
-   Add/change keys here — the page updates automatically.
+   Add/change keys here the page updates automatically.
    ================================================================ */
 const TRANSLATIONS = {
 
   fr: {
     /* page */
-    'page.title': 'Thomas Ferriere — Développeur',
+    'page.title': 'Thomas Ferriere Développeur',
 
     /* nav */
     'nav.about':    'À propos',
@@ -27,7 +27,7 @@ const TRANSLATIONS = {
     'about.label':   'À propos',
     'about.heading': 'Un peu plus sur moi',
     'about.p1':      "Je suis étudiant en Licence 3 Informatique à l'Université de La Réunion et candidat au Master Informatique & IA. Passionné par le développement web et mobile, l'administration système et l'automatisation.",
-    'about.p2':      "J'aime construire des outils concrets qui résolvent de vrais problèmes — une API, une interface ou un script qui fait gagner du temps. En dehors du code, je m'intéresse à l'écosystème numérique, au cinéma et à la musique.",
+    'about.p2':      "J'aime construire des outils concrets qui résolvent de vrais problèmes : une API, une interface ou un script qui fait gagner du temps. En dehors du code, je m'intéresse à l'écosystème numérique, au cinéma et à la musique.",
 
     'about.fact.status.label':   'Statut',
     'about.fact.status.value':   'Étudiant · L3 Informatique',
@@ -49,10 +49,10 @@ const TRANSLATIONS = {
 
     /* certifications */
     'certs.heading':   'Certifications',
-    'cert.1.name':     'SecNumacadémie — ANSSI',
+    'cert.1.name':     'SecNumacadémie ANSSI',
     'cert.1.detail':   'MOOC cybersécurité · 100 % aux 4 modules',
     'cert.1.date':     'Mars 2024',
-    'cert.2.name':     'Certification Pix — Niveau Avancé 1',
+    'cert.2.name':     'Certification Pix Niveau Avancé 1',
     'cert.2.detail':   'Score 532/895 · Université de La Réunion',
     'cert.2.date':     'Déc. 2025',
 
@@ -108,7 +108,7 @@ const TRANSLATIONS = {
 
   en: {
     /* page */
-    'page.title': 'Thomas Ferriere — Developer',
+    'page.title': 'Thomas Ferriere Developer',
 
     /* nav */
     'nav.about':    'About',
@@ -126,7 +126,7 @@ const TRANSLATIONS = {
     'about.label':   'About',
     'about.heading': 'A bit more about me',
     'about.p1':      "I'm a third-year Computer Science student at the University of La Réunion, prospective Master's in CS & AI. I'm passionate about web and mobile development, system administration, and automation.",
-    'about.p2':      "I like building concrete tools that solve real problems — an API, an interface, or a script that saves time. Outside of code, I follow the tech ecosystem, enjoy cinema and music.",
+    'about.p2':      "I like building concrete tools that solve real problems: an API, an interface, or a script that saves time. Outside of code, I follow the tech ecosystem, enjoy cinema and music.",
 
     'about.fact.status.label':   'Status',
     'about.fact.status.value':   'Student · BSc Computer Science',
@@ -148,10 +148,10 @@ const TRANSLATIONS = {
 
     /* certifications */
     'certs.heading':   'Certifications',
-    'cert.1.name':     'SecNumacadémie — ANSSI',
+    'cert.1.name':     'SecNumacadémie ANSSI',
     'cert.1.detail':   'Cybersecurity MOOC · 100% on all 4 modules',
     'cert.1.date':     'March 2024',
-    'cert.2.name':     'Pix Certification — Advanced Level 1',
+    'cert.2.name':     'Pix Certification Advanced Level 1',
     'cert.2.detail':   'Score 532/895 · University of La Réunion',
     'cert.2.date':     'Dec. 2025',
 
@@ -171,7 +171,7 @@ const TRANSLATIONS = {
     'proj.2.desc':  "Design and development of mobile applications in Java with Android Studio. XML interfaces and REST API integration.",
 
     'proj.3.title': 'Data Analysis',
-    'proj.3.desc':  "Statistical processing and data visualisation in R. Exploratory methods — PCA, clustering, regression — to interpret results.",
+    'proj.3.desc':  "Statistical processing and data visualisation in R. Exploratory methods (PCA, clustering, regression) to interpret results.",
 
     'proj.4.title': 'Sales Management',
     'proj.4.desc':  "Automated sales management with Excel: pivot tables, advanced formulas, and automated reporting for order and revenue tracking.",
@@ -248,7 +248,7 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
 applyLang(lang);
 
 /* ================================================================
-   HEADER — border on scroll
+   HEADER border on scroll
    ================================================================ */
 const header = document.getElementById('header');
 
