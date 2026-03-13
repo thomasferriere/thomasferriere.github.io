@@ -4,10 +4,10 @@
    TYPEWRITER
    ============================================================ */
 const phrases = [
-  'Full-Stack Developer',
-  'Open Source Enthusiast',
-  'Problem Solver',
-  'UI/UX Tinkerer',
+  'Étudiant en Informatique',
+  'Développeur Web & Mobile',
+  'Passionné de Linux & DevOps',
+  'Candidat Master Info & IA',
 ];
 
 let phraseIndex = 0;
@@ -105,7 +105,7 @@ navLinksList.querySelectorAll('.nav__link').forEach(link => {
    SCROLL REVEAL
    ============================================================ */
 const revealTargets = document.querySelectorAll(
-  '.skill-card, .project-card, .contact__text, .contact__form, .section__title, .section__subtitle'
+  '.skill-card, .project-card, .timeline__item, .cert-card, .contact__text, .contact__form, .section__title, .section__subtitle'
 );
 
 revealTargets.forEach(el => el.classList.add('reveal'));
@@ -157,27 +157,27 @@ function validate() {
   const message = document.getElementById('message').value.trim();
 
   if (!name) {
-    showError('name', 'Name is required.');
+    showError('name', 'Le nom est requis.');
     valid = false;
   } else {
     clearError('name');
   }
 
   if (!email) {
-    showError('email', 'Email is required.');
+    showError('email', "L'email est requis.");
     valid = false;
   } else if (!validateEmail(email)) {
-    showError('email', 'Please enter a valid email address.');
+    showError('email', 'Veuillez entrer une adresse email valide.');
     valid = false;
   } else {
     clearError('email');
   }
 
   if (!message) {
-    showError('message', 'Message is required.');
+    showError('message', 'Le message est requis.');
     valid = false;
   } else if (message.length < 10) {
-    showError('message', 'Message must be at least 10 characters.');
+    showError('message', 'Le message doit contenir au moins 10 caractères.');
     valid = false;
   } else {
     clearError('message');
