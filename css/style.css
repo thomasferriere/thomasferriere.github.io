@@ -22,6 +22,7 @@
 
   /* design system variables */
   --bg-primary:   #8EB69B; /* Sage Green */
+  --bg-primary-rgb: 142, 182, 155;
   --bg-secondary: transparent;
   --bg-tertiary:  #ffffff;
   --text-main:    #0B2B26; /* Dark Green */
@@ -38,6 +39,7 @@
 
 [data-theme="dark"] {
   --bg-primary:   #0B2B26;
+  --bg-primary-rgb: 11, 43, 38;
   --bg-secondary: #051F20;
   --bg-tertiary:  transparent;
   --text-main:    #8EB69B;
@@ -53,8 +55,9 @@
 }
 
 body {
-  transition: background-color 0.4s ease, color 0.4s ease;
+  position: relative;
   background-color: var(--bg-primary);
+  transition: background-color 0.4s ease, color 0.4s ease;
   color: var(--text-main);
 }
 
@@ -99,7 +102,7 @@ button { font-family: inherit; cursor: pointer; }
 
 /* once scrolled past hero, switch to white glass */
 .header.scrolled {
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(var(--bg-primary-rgb), 0.85);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   border-color: var(--border);
@@ -1199,3 +1202,22 @@ button { font-family: inherit; cursor: pointer; }
 
 html[data-lang="fr"] .svg-lang-en { display: none; }
 html[data-lang="en"] .svg-lang-fr { display: none; }
+
+body::before {
+  content: "";
+  position: fixed;
+  top: -50%; left: -50%; width: 200%; height: 200%;
+  background-image: url('../6774626eccb8cd256e5c394c75dbadc8.jpg'); /* Chemin de l'image texturée */
+  background-size: cover;
+  background-position: center;
+  opacity: 0.05; /* Très subtil en mode clair */
+  z-index: -1;
+  pointer-events: none;
+  animation: panBackground 60s linear infinite alternate;
+  transition: opacity 0.4s ease;
+}
+[data-theme="dark"] body::before { opacity: 0.15; } /* Un peu plus visible en mode sombre */
+@keyframes panBackground {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(5%, 5%) scale(1.05); }
+}

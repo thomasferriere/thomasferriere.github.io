@@ -426,15 +426,42 @@ form?.addEventListener('submit', e => {
   e.preventDefault();
   if (!validateForm()) return;
 
-  formBtn.disabled   = true;
-  formBtn.textContent = TRANSLATIONS[lang]['form.sent'];
+  formBtn.disabled = true;
+  formBtn.textContent = TRANSLATIONS[lang]['form.sent'] || 'Sent!';
 
-  /* ── replace with real fetch() to your email service ── */
-  setTimeout(() => {
-    form.reset();
-    formBtn.disabled   = false;
-    formBtn.textContent = TRANSLATIONS[lang]['form.submit'];
-  }, 3000);
+  const data = new FormData(form);
+
+  fetch(form.action, {
+    method: form.method || 'POST',
+    body: data,
+    headers: {
+      'Accept': 'application/json'
+    }
+  })
+  .then(response => {
+    if (response.ok) {
+      form.reset();
+      setTimeout(() => {
+        formBtn.disabled = false;
+        formBtn.innerHTML = `<span data-i18n="form.submit">${TRANSLATIONS[lang]['form.submit']}</span>`;
+      }, 3000);
+    } else {
+      response.json().then(data => {
+        if (data && data.errors) {
+          alert(data.errors.map(error => error.message).join(", "));
+        } else {
+          alert(lang === 'fr' ? "Une erreur est survenue lors de l'envoi." : "An error occurred while sending your message.");
+        }
+        formBtn.disabled = false;
+        formBtn.innerHTML = `<span data-i18n="form.submit">${TRANSLATIONS[lang]['form.submit']}</span>`;
+      });
+    }
+  })
+  .catch(error => {
+    alert(lang === 'fr' ? "Une erreur réseau est survenue." : "A network error occurred.");
+    formBtn.disabled = false;
+    formBtn.innerHTML = `<span data-i18n="form.submit">${TRANSLATIONS[lang]['form.submit']}</span>`;
+  });
 });
 
 /* ================================================================
