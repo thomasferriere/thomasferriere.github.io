@@ -1,5 +1,14 @@
 'use strict';
 
+document.addEventListener('DOMContentLoaded', () => {
+  AOS.init({
+    duration: 800,
+    easing: 'ease-out-cubic',
+    once: true,
+    offset: 50
+  });
+});
+
 /* ================================================================
    TRANSLATIONS
    All user-visible text, keyed by ID.
@@ -80,6 +89,10 @@ const TRANSLATIONS = {
     'proj.5.title': 'Enseignement NSI',
     'proj.5.desc':  "Observation pédagogique au Lycée Lislet Geoffroy. Préparation de contenus et réflexion sur la didactique en Numérique & Sciences Informatiques.",
 
+    'proj.type.subtext': 'Projet Ingénieur & IA',
+    'proj.subtext.title': 'Subtext AI',
+    'proj.subtext.desc': "Application full-stack d'analyse psychologique de scénarios propulsée par des LLMs locaux. Backend asynchrone (FastAPI), cache MD5 (SQLite), conteneurisation (Docker) et pipeline CI/CD automatisé.",
+
     /* contact */
     'contact.label':          'Contact',
     'contact.heading':        'Travaillons ensemble',
@@ -116,6 +129,9 @@ const TRANSLATIONS = {
     'lab.feat.docker':      'Conteneurisation et orchestration des applications.',
     'lab.feat.vpn':         'Réseau maillé sécurisé pour un accès distant sans ouvrir de ports sur ma box.',
     'lab.feat.monitor':     'Suivi des ressources système et alertes de disponibilité.',
+    'hero.status.live':     'En ligne depuis La Réunion · ',
+    'theme.light': 'Mode Clair',
+    'theme.dark': 'Mode Sombre',
   },
 
   en: {
@@ -191,6 +207,10 @@ const TRANSLATIONS = {
     'proj.5.title': 'NSI Teaching',
     'proj.5.desc':  "Pedagogical observation at Lycée Lislet Geoffroy. Content preparation and discussion on teaching methods in Digital & Computer Science.",
 
+    'proj.type.subtext': 'Engineering & AI Project',
+    'proj.subtext.title': 'Subtext AI',
+    'proj.subtext.desc': "Full-stack psychological screenplay analysis app powered by local LLMs. Features an asynchronous backend (FastAPI), MD5 caching (SQLite), Docker containerisation, and an automated CI/CD pipeline.",
+
     /* contact */
     'contact.label':          'Contact',
     'contact.heading':        "Let's work together",
@@ -227,6 +247,9 @@ const TRANSLATIONS = {
     'lab.feat.docker':      'Containerisation and orchestration of services.',
     'lab.feat.vpn':         'Secured mesh network for remote access without exposing public ports.',
     'lab.feat.monitor':     'System resource monitoring and uptime alerts.',
+    'hero.status.live':     'Online from La Réunion · ',
+    'theme.light': 'Light Mode',
+    'theme.dark': 'Dark Mode',
   },
 };
 
@@ -270,6 +293,26 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
 
 /* apply on load */
 applyLang(lang);
+
+/* ================================================================
+   THEME ENGINE
+   ================================================================ */
+const themeBtn = document.getElementById('theme-toggle');
+let currentTheme = localStorage.getItem('portfolio-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('portfolio-theme', theme);
+}
+
+applyTheme(currentTheme);
+
+if (themeBtn) {
+  themeBtn.addEventListener('click', () => {
+    currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    applyTheme(currentTheme);
+  });
+}
 
 /* ================================================================
    HEADER border on scroll
@@ -407,6 +450,48 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 const termInput = document.getElementById('term-input');
 const termBody = document.getElementById('term-body');
 
+const welcomeTextFr = "[OK] Initialisation de l'environnement Darwin/macOS...\\n[OK] Lancement des daemons FastAPI & Docker...\\n[OK] Connexion établie.\\nSaisissez 'help' pour démarrer.";
+const welcomeTextEn = "[OK] Initializing Darwin/macOS environment...\\n[OK] Starting FastAPI & Docker daemons...\\n[OK] Connection established.\\nType 'help' to start.";
+
+const typedTextElement = document.querySelector('.typed-text');
+const welcomeMsgElement = document.querySelector('.term-welcome-msg');
+
+// Nettoyage initial
+if (typedTextElement && welcomeMsgElement) {
+    const terminal = document.querySelector('.terminal-container');
+    typedTextElement.textContent = '';
+    welcomeMsgElement.innerHTML = '<span class="cursor-blink"></span>';
+    
+    let i = 0;
+    const textToType = lang === 'fr' ? welcomeTextFr : welcomeTextEn;
+    const speed = 35; // Vitesse de frappe en ms
+    
+    function typeWriter() {
+        if (i < textToType.length) {
+            if (textToType.charAt(i) === '\\n') {
+                welcomeMsgElement.innerHTML = welcomeMsgElement.innerHTML.replace('<span class="cursor-blink"></span>', '<br><span class="cursor-blink"></span>');
+            } else {
+                const span = document.createElement('span');
+                span.textContent = textToType.charAt(i);
+                welcomeMsgElement.insertBefore(span, welcomeMsgElement.querySelector('.cursor-blink'));
+            }
+            i++;
+            setTimeout(typeWriter, speed);
+        } else {
+            welcomeMsgElement.querySelector('.cursor-blink').remove();
+        }
+    }
+    
+    // Lancer l'animation quand on scrolle sur le terminal
+    const termObserver = new IntersectionObserver(entries => {
+        if(entries[0].isIntersecting) {
+            setTimeout(typeWriter, 500);
+            termObserver.disconnect();
+        }
+    });
+    termObserver.observe(terminal);
+}
+
 const SYSINFO_FR = `
 <b>Système :</b> Debian GNU/Linux 12 (bookworm)
 <b>Kernel :</b> Linux 6.1.0-21-amd64 x86_64
@@ -489,6 +574,26 @@ Available commands:
   <b>clear</b>   : Clear the terminal screen.
 `;
 
+const DEPLOY_FR = `
+<b>[CI/CD] Déploiement de Subtext AI...</b>
+[✓] Checkout de la branche main
+[✓] Build de l'image Docker (subtext-ai:latest)
+[✓] Vérification du cache MD5 et Linting : PASS
+[✓] Lancement du conteneur FastAPI sur le port 8000
+[✓] Connexion à host.docker.internal:11434 (Ollama)
+<b>Statut :</b> Application en ligne et prête pour l'analyse NLP.
+`;
+
+const DEPLOY_EN = `
+<b>[CI/CD] Deploying Subtext AI...</b>
+[✓] Checkout main branch
+[✓] Build Docker image (subtext-ai:latest)
+[✓] MD5 Cache verification & Linting: PASS
+[✓] Starting FastAPI container on port 8000
+[✓] Connecting to host.docker.internal:11434 (Ollama)
+<b>Status:</b> Application online and ready for NLP analysis.
+`;
+
 function escapeHtml(text) {
   return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
@@ -520,6 +625,8 @@ function termExecute(command) {
     content.innerHTML = lang === 'fr' ? DOCKER_FR : DOCKER_EN;
   } else if (cmd === 'network') {
     content.innerHTML = lang === 'fr' ? NETWORK_FR : NETWORK_EN;
+  } else if (cmd === 'deploy') {
+    content.innerHTML = lang === 'fr' ? DEPLOY_FR : DEPLOY_EN;
   } else if (cmd === 'clear') {
     const outputs = termBody.querySelectorAll('.terminal-output-block');
     outputs.forEach(o => o.remove());
@@ -562,3 +669,60 @@ termInput?.addEventListener('keydown', e => {
 termBody?.addEventListener('click', () => {
   termInput?.focus();
 });
+
+const terminal = document.querySelector('.terminal-container');
+const headerTerm = document.querySelector('.terminal-header');
+let isDragging = false;
+let currentX;
+let currentY;
+let initialX;
+let initialY;
+let xOffset = 0;
+let yOffset = 0;
+
+if (headerTerm && terminal) {
+  headerTerm.addEventListener('mousedown', dragStart);
+  document.addEventListener('mousemove', drag);
+  document.addEventListener('mouseup', dragEnd);
+}
+
+function dragStart(e) {
+  initialX = e.clientX - xOffset;
+  initialY = e.clientY - yOffset;
+  if (e.target === headerTerm || e.target.parentNode === headerTerm) {
+    isDragging = true;
+  }
+}
+
+function drag(e) {
+  if (isDragging) {
+    e.preventDefault();
+    currentX = e.clientX - initialX;
+    currentY = e.clientY - initialY;
+    xOffset = currentX;
+    yOffset = currentY;
+    terminal.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
+  }
+}
+
+function dragEnd(e) {
+  initialX = currentX;
+  initialY = currentY;
+  isDragging = false;
+}
+
+/* ================================================================
+   LIVE STATUS CLOCK
+   ================================================================ */
+function updateClock() {
+  const timeEl = document.getElementById('local-time');
+  if (!timeEl) return;
+  const now = new Date();
+  const formatter = new Intl.DateTimeFormat(lang === 'fr' ? 'fr-FR' : 'en-GB', {
+    timeZone: 'Indian/Reunion',
+    hour: '2-digit', minute: '2-digit', second: '2-digit'
+  });
+  timeEl.textContent = formatter.format(now) + (lang === 'fr' ? ' (REU)' : ' (REU)');
+}
+setInterval(updateClock, 1000);
+updateClock();
