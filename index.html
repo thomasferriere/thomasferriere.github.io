@@ -100,9 +100,9 @@
     <section class="section section--off" id="about">
       <div class="container about__grid">
 
-        <div class="about__text">
+        <div class="about__text" data-aos="fade-right">
           <p class="label" data-i18n="about.label">À propos</p>
-          <h2 class="section__title" data-i18n="about.heading">Un peu plus sur moi</h2>
+          <h2 class="section__title" data-i18n="about.heading" data-aos="fade-up">Un peu plus sur moi</h2>
           <p data-i18n="about.p1">
             Je suis étudiant en Licence 3 Informatique à l'Université de La Réunion et
             candidat au Master Informatique &amp; IA. Passionné par le développement
@@ -115,7 +115,7 @@
           </p>
         </div>
 
-        <dl class="about__facts">
+        <dl class="about__facts" data-aos="fade-left">
           <div class="fact">
             <dt class="fact__label" data-i18n="about.fact.status.label">Statut</dt>
             <dd class="fact__value" data-i18n="about.fact.status.value">Étudiant · L3 Informatique</dd>
@@ -149,12 +149,12 @@
 
         <div class="section__header">
           <p class="label" data-i18n="skills.label">Compétences</p>
-          <h2 class="section__title" data-i18n="skills.heading">Ce avec quoi je travaille</h2>
+          <h2 class="section__title" data-i18n="skills.heading" data-aos="fade-up">Ce avec quoi je travaille</h2>
         </div>
 
         <div class="skills__grid">
 
-          <div class="skill-group">
+          <div class="skill-group" data-aos="fade-up" data-aos-delay="0">
             <h3 class="skill-group__name" data-i18n="skills.g1">Langages</h3>
             <ul class="skill-group__list">
               <li>Java</li>
@@ -168,7 +168,7 @@
             </ul>
           </div>
 
-          <div class="skill-group">
+          <div class="skill-group" data-aos="fade-up" data-aos-delay="100">
             <h3 class="skill-group__name" data-i18n="skills.g2">Outils &amp; Environnements</h3>
             <ul class="skill-group__list">
               <li>Git / GitLab</li>
@@ -181,7 +181,7 @@
             </ul>
           </div>
 
-          <div class="skill-group">
+          <div class="skill-group" data-aos="fade-up" data-aos-delay="200">
             <h3 class="skill-group__name" data-i18n="skills.g3">Systèmes &amp; Réseaux</h3>
             <ul class="skill-group__list">
               <li>Administration Linux</li>
@@ -199,14 +199,14 @@
         <div class="certs">
           <h3 class="certs__heading" data-i18n="certs.heading">Certifications</h3>
           <div class="certs__list">
-            <div class="cert-item">
+            <div class="cert-item" data-aos="fade-up" data-aos-delay="0">
               <div>
                 <p class="cert-item__name" data-i18n="cert.1.name">SecNumacadémie ANSSI</p>
                 <p class="cert-item__detail" data-i18n="cert.1.detail">MOOC cybersécurité · 100 % aux 4 modules</p>
               </div>
               <span class="cert-item__date" data-i18n="cert.1.date">Mars 2024</span>
             </div>
-            <div class="cert-item">
+            <div class="cert-item" data-aos="fade-up" data-aos-delay="100">
               <div>
                 <p class="cert-item__name" data-i18n="cert.2.name">Certification Pix Niveau Avancé 1</p>
                 <p class="cert-item__detail" data-i18n="cert.2.detail">Score 532/895 · Université de La Réunion</p>
@@ -227,7 +227,7 @@
 
         <div class="section__header">
           <p class="label" data-i18n="projects.label">Projets</p>
-          <h2 class="section__title" data-i18n="projects.heading">Ce que j'ai construit</h2>
+          <h2 class="section__title" data-i18n="projects.heading" data-aos="fade-up">Ce que j'ai construit</h2>
         </div>
 
         <div class="projects__grid">
@@ -449,12 +449,12 @@
 
         <div class="section__header">
           <p class="label" data-i18n="lab.label">Infrastructure &amp; DevOps</p>
-          <h2 class="section__title" data-i18n="lab.heading">Mon Homelab &amp; DevOps</h2>
+          <h2 class="section__title" data-i18n="lab.heading" data-aos="fade-up">Mon Homelab &amp; DevOps</h2>
         </div>
 
         <div class="lab__grid">
           <!-- Terminal -->
-          <div class="terminal-container">
+          <div class="terminal-container" data-aos="zoom-in-up">
             <div class="terminal-header">
               <div class="terminal-buttons">
                 <span class="terminal-btn terminal-btn--close"></span>
@@ -499,21 +499,21 @@
               L'accès à distance est entièrement sécurisé via Tailscale (VPN Mesh privé) et les flux internes sont monitorés en permanence pour garantir la disponibilité.
             </p>
             <div class="lab__features">
-              <div class="lab-feature">
+              <div class="lab-feature" data-aos="fade-left" data-aos-delay="100">
                 <div class="lab-feature__icon">🐳</div>
                 <div>
                   <h4 class="lab-feature__title">Docker &amp; Compose</h4>
                   <p class="lab-feature__desc" data-i18n="lab.feat.docker">Conteneurisation et orchestration des applications.</p>
                 </div>
               </div>
-              <div class="lab-feature">
+              <div class="lab-feature" data-aos="fade-left" data-aos-delay="200">
                 <div class="lab-feature__icon">🔒</div>
                 <div>
                   <h4 class="lab-feature__title">Tailscale &amp; WireGuard</h4>
                   <p class="lab-feature__desc" data-i18n="lab.feat.vpn">Réseau maillé sécurisé pour un accès distant sans ouvrir de ports sur ma box.</p>
                 </div>
               </div>
-              <div class="lab-feature">
+              <div class="lab-feature" data-aos="fade-left" data-aos-delay="300">
                 <div class="lab-feature__icon">📈</div>
                 <div>
                   <h4 class="lab-feature__title">Netdata &amp; Kuma</h4>
@@ -535,19 +535,28 @@
 
         <div class="contact__header text-center" style="grid-column: 1 / -1; margin-bottom: 3rem; text-align: center;">
           <p class="label" data-i18n="contact.label">Contact</p>
-          <h2 class="section__title" data-i18n="contact.heading">Travaillons ensemble</h2>
+          <h2 class="section__title" data-i18n="contact.heading" data-aos="fade-up">Travaillons ensemble</h2>
         </div>
         <div class="bento-contact" style="grid-column: 1 / -1; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
           
           <a href="mailto:tferrierepro@icloud.com" class="bento-card" data-tilt data-tilt-max="2" data-aos="fade-up">
-            <div class="bento-icon">✉️</div>
+            <div class="bento-icon">
+              <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </div>
             <h3>Email</h3>
             <p>tferrierepro@icloud.com</p>
             <span class="bento-action">M'écrire ↗</span>
           </a>
 
           <a href="https://github.com/thomasferriere" target="_blank" rel="noopener noreferrer" class="bento-card" data-tilt data-tilt-max="2" data-aos="fade-up" data-aos-delay="100">
-            <div class="bento-icon">🐙</div>
+            <div class="bento-icon">
+              <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+              </svg>
+            </div>
             <h3>GitHub</h3>
             <p>github.com/thomasferriere</p>
             <span class="bento-action">Voir le code ↗</span>
