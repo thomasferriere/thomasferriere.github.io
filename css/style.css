@@ -642,8 +642,8 @@ button { font-family: inherit; cursor: pointer; }
    ================================================================ */
 .projects__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
 }
 
 .card {
@@ -653,6 +653,7 @@ button { font-family: inherit; cursor: pointer; }
   padding: 1.75rem;
   display: flex;
   flex-direction: column;
+  height: 100%; /* Force toutes les cartes à la même hauteur dans une ligne */
   gap: 0.75rem;
   transition: box-shadow 0.3s var(--ease), transform 0.3s var(--ease),
               border-color 0.3s;
