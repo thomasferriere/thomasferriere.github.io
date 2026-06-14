@@ -666,16 +666,16 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 .card__img-wrapper {
-  height: 80px; /* Force une hauteur fixe pour toutes les icônes */
+  height: 60px; /* Aligne la hauteur de l'icône avec le style minimaliste */
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  margin-bottom: 1.5rem;
 }
 .card__icon {
+  display: block;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
   width: 48px;
   height: 48px;
-  color: var(--accent);
 }
 .card__icon--bilingue {
   width: 100%;

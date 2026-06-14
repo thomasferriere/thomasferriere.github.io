@@ -438,16 +438,20 @@
 
           <article class="card" data-tilt data-tilt-max="4" data-aos="fade-up" data-aos-delay="300">
             <div class="card__img-wrapper">
-              <svg class="card__icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="card__icon" viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                 <polyline points="14 2 14 8 20 8"></polyline>
                 <line x1="16" y1="13" x2="8" y2="13"></line>
                 <line x1="16" y1="17" x2="8" y2="17"></line>
               </svg>
             </div>
+            <p class="card__type" data-i18n="proj.lab.type">Recherche & Documentation</p>
             <h3 class="card__title" data-i18n="proj.lab.title">Lab Notes & Research</h3>
             <p class="card__desc" data-i18n="proj.lab.desc">Journal technique : recherche sur l'optimisation des LLMs locaux, cache MD5, et sécurité réseaux.</p>
-            <a href="https://github.com/ton-repo/notes" target="_blank" class="card__link" data-i18n="proj.lab.action">Voir les notes ↗</a>
+            <ul class="card__tags">
+              <li data-i18n="proj.lab.tag1">Recherche</li><li data-i18n="proj.lab.tag2">LLM</li><li data-i18n="proj.lab.tag3">Optimisation</li>
+            </ul>
+            <a href="https://github.com/ton-repo/notes" target="_blank" class="card__link" data-i18n="proj.lab.action" style="display: block; margin-top: 1rem; font-size: 0.85rem; font-weight: 600; color: var(--accent);">Accéder aux notes ↗</a>
           </article>
 
         </div>
