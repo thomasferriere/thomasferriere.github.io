@@ -134,9 +134,22 @@ button { font-family: inherit; cursor: pointer; }
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.65);
   transition: color 0.25s;
+  position: relative;
+  padding-bottom: 4px;
 }
-.nav__link:hover,
-.nav__link.active { color: var(--white); }
+.nav__link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--accent);
+  transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.nav__link:hover::after, .nav__link.active::after {
+  width: 100%;
+}
 
 .header.scrolled .nav__link          { color: var(--text-2); }
 .header.scrolled .nav__link:hover,
@@ -231,11 +244,15 @@ button { font-family: inherit; cursor: pointer; }
   font-size: 0.9rem;
   font-weight: 500;
   border: 1.5px solid transparent;
-  transition: background 0.2s, color 0.2s, border-color 0.2s,
-              box-shadow 0.2s, transform 0.15s;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   white-space: nowrap;
 }
-.btn:active { transform: scale(0.97); }
+.btn:hover, .lang-btn:hover {
+  transform: scale(1.03);
+}
+.btn:active {
+  transform: scale(0.97); /* Effet d'enfoncement physique au clic */
+}
 
 /* solid dark (used in light sections) */
 .btn--dark {
@@ -1286,4 +1303,12 @@ body::before {
 [data-theme="dark"] .btn--glass:hover {
   background: rgba(142, 182, 155, 0.15) !important;
   border-color: var(--accent) !important;
+}
+
+.bento-card .bento-icon svg {
+  transition: transform 0.4s ease, stroke 0.4s ease;
+}
+.bento-card:hover .bento-icon svg {
+  transform: scale(1.15) rotate(-5deg);
+  stroke: var(--accent);
 }
