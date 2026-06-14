@@ -27,6 +27,7 @@
   --text-main:    #051F20; /* Vert abyssal pour une lecture parfaite */
   --text-2:       #235347; /* Vert forêt pour le texte secondaire */
   --accent:       #8EB69B; /* Vert sauge pour les petits détails */
+  --accent-text:  #235347; /* Vert haute lisibilité pour les liens/boutons (A11y) */
   --border:       rgba(5, 31, 32, 0.1);
   --green-100:    #235347;
   --header-bg:    rgba(244, 247, 245, 0.85); /* Fond header light */
@@ -45,6 +46,7 @@
   --text-main:    #F4F7F5; /* Texte clair lisible */
   --text-2:       #8EB69B; /* Vert sauge pour le texte secondaire */
   --accent:       #8EB69B; /* Vert sauge brillant */
+  --accent-text:  #8EB69B; /* Sauge clair pour les liens (A11y) */
   --border:       rgba(142, 182, 155, 0.15);
   --green-100:    #163832;
   --header-bg:    rgba(5, 31, 32, 0.85); /* Fond header dark */
@@ -685,7 +687,7 @@ button { font-family: inherit; cursor: pointer; }
   margin-top: auto;
   display: inline-block;
   font-weight: 600;
-  color: var(--accent);
+  color: var(--accent-text);
   text-decoration: none;
 }
 .card__img {
@@ -1293,7 +1295,7 @@ body::before {
 .bento-icon { font-size: 2rem; margin-bottom: 1.5rem; }
 .bento-card h3 { font-size: 1.2rem; margin-bottom: 0.5rem; font-weight: 600; }
 .bento-card p { color: var(--text-2); margin-bottom: 2rem; font-size: 0.95rem; }
-.bento-action { margin-top: auto; font-size: 0.85rem; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; }
+.bento-action { margin-top: auto; font-size: 0.85rem; font-weight: 600; color: var(--accent-text); text-transform: uppercase; letter-spacing: 0.05em; }
 
 .hero__title, .hero__sub, .logo {
   color: #F4F7F5 !important; 

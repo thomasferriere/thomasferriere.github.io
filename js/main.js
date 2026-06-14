@@ -98,8 +98,12 @@ const TRANSLATIONS = {
     'contact.heading':        'Travaillons ensemble',
     'contact.sub':            "Vous avez un projet, une opportunité ou simplement envie d'échanger ? Je suis disponible et je réponds rapidement.",
     'contact.email.label':    'Email',
+    'contact.email.action':   "M'écrire ↗",
+    'contact.github.label':   'GitHub',
+    'contact.github.action':  'Voir le code ↗',
     'contact.location.label': 'Localisation',
-    'contact.location.value': 'La Réunion, France',
+    'contact.location.value': 'La Réunion, France (UTC+4)',
+    'contact.location.status': 'Disponible pour échanger',
 
     /* form */
     'form.name':       'Nom',
@@ -234,8 +238,12 @@ const TRANSLATIONS = {
     'contact.heading':        "Let's work together",
     'contact.sub':            "Have a project, an opportunity, or just want to chat? I'm available and reply quickly.",
     'contact.email.label':    'Email',
+    'contact.email.action':   'Write me ↗',
+    'contact.github.label':   'GitHub',
+    'contact.github.action':  'View code ↗',
     'contact.location.label': 'Location',
-    'contact.location.value': 'La Réunion, France',
+    'contact.location.value': 'La Réunion, France (UTC+4)',
+    'contact.location.status': 'Available to chat',
 
     /* form */
     'form.name':       'Name',
@@ -663,6 +671,11 @@ if (headerTerm && terminal) {
   headerTerm.addEventListener('mousedown', dragStart);
   document.addEventListener('mousemove', drag);
   document.addEventListener('mouseup', dragEnd);
+
+  // Mobile touch event support
+  headerTerm.addEventListener('touchstart', e => dragStart(e.touches[0]));
+  document.addEventListener('touchmove', e => drag(e.touches[0]), { passive: false });
+  document.addEventListener('touchend', dragEnd);
 }
 
 function dragStart(e) {
@@ -693,14 +706,16 @@ function dragEnd(e) {
 /* ================================================================
    LIVE STATUS CLOCK
    ================================================================ */
+const clockFormatters = {
+  fr: new Intl.DateTimeFormat('fr-FR', { timeZone: 'Indian/Reunion', hour: '2-digit', minute: '2-digit', second: '2-digit' }),
+  en: new Intl.DateTimeFormat('en-GB', { timeZone: 'Indian/Reunion', hour: '2-digit', minute: '2-digit', second: '2-digit' })
+};
+
 function updateClock() {
   const timeEl = document.getElementById('local-time');
   if (!timeEl) return;
   const now = new Date();
-  const formatter = new Intl.DateTimeFormat(lang === 'fr' ? 'fr-FR' : 'en-GB', {
-    timeZone: 'Indian/Reunion',
-    hour: '2-digit', minute: '2-digit', second: '2-digit'
-  });
+  const formatter = clockFormatters[lang] || clockFormatters.fr;
   timeEl.textContent = formatter.format(now) + (lang === 'fr' ? ' (REU)' : ' (REU)');
 }
 setInterval(updateClock, 1000);
