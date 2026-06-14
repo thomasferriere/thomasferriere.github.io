@@ -17,41 +17,41 @@
   /* brand colors */
   --green-900:  #0B2B26;
   --green-800:  #163832;
-  --green-700:  #235347;
+  --green-700:  var(--text-2);
   --green-mute: #8E8698;
 
   /* design system variables */
-  --bg-primary:   #8EB69B; /* Sage Green */
-  --bg-primary-rgb: 142, 182, 155;
-  --bg-secondary: transparent;
-  --bg-tertiary:  #ffffff;
-  --text-main:    #0B2B26; /* Dark Green */
-  --text-2:       #163832; /* Deep Forest Green */
-  --text-3:       #235347; /* Forest Green */
-  --border:       rgba(11, 43, 38, 0.15);
+  --bg-primary:   #F4F7F5; /* Blanc très légèrement teinté sauge */
+  --bg-secondary: #ffffff; /* Blanc pur pour les cartes */
+  --text-main:    #051F20; /* Vert abyssal pour une lecture parfaite */
+  --text-2:       #235347; /* Vert forêt pour le texte secondaire */
+  --accent:       #8EB69B; /* Vert sauge pour les petits détails */
+  --border:       rgba(5, 31, 32, 0.1);
   --green-100:    #235347;
+  --header-bg:    rgba(244, 247, 245, 0.85); /* Fond header light */
 
   /* mapping old variables to new ones for seamless transition */
-  --white:      var(--bg-tertiary);
-  --off:        var(--bg-secondary);
+  --white:      var(--bg-secondary);
+  --off:        var(--bg-primary);
   --text:       var(--text-main);
+  --bg-tertiary: var(--bg-secondary);
 }
 
 [data-theme="dark"] {
-  --bg-primary:   #0B2B26;
-  --bg-primary-rgb: 11, 43, 38;
-  --bg-secondary: #051F20;
-  --bg-tertiary:  transparent;
-  --text-main:    #8EB69B;
-  --text-2:       #c9d1d9;
-  --text-3:       #8EB69B;
-  --border:       rgba(142, 182, 155, 0.2);
+  --bg-primary:   #051F20; /* Fond abyssal */
+  --bg-secondary: #0B2B26; /* Cartes légèrement plus claires */
+  --text-main:    #F4F7F5; /* Texte clair lisible */
+  --text-2:       #8EB69B; /* Vert sauge pour le texte secondaire */
+  --accent:       #8EB69B; /* Vert sauge brillant */
+  --border:       rgba(142, 182, 155, 0.15);
   --green-100:    #163832;
+  --header-bg:    rgba(5, 31, 32, 0.85); /* Fond header dark */
 
   /* mapping dark theme variables */
   --white:      var(--bg-secondary);
-  --off:        var(--bg-secondary);
+  --off:        var(--bg-primary);
   --text:       var(--text-main);
+  --bg-tertiary: var(--bg-secondary);
 }
 
 body {
@@ -102,7 +102,7 @@ button { font-family: inherit; cursor: pointer; }
 
 /* once scrolled past hero, switch to white glass */
 .header.scrolled {
-  background: rgba(var(--bg-primary-rgb), 0.85);
+  background: var(--header-bg);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   border-color: var(--border);
@@ -618,7 +618,7 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 .card {
-  background: var(--white);
+  background: var(--bg-secondary);
   border: 1px solid var(--border);
   border-radius: var(--r);
   padding: 1.75rem;
@@ -1221,3 +1221,26 @@ body::before {
   0% { transform: translate(0, 0) scale(1); }
   100% { transform: translate(5%, 5%) scale(1.05); }
 }
+
+.bento-contact { width: 100%; }
+.bento-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  color: var(--text-main);
+}
+.bento-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+[data-theme="dark"] .bento-card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+.bento-icon { font-size: 2rem; margin-bottom: 1.5rem; }
+.bento-card h3 { font-size: 1.2rem; margin-bottom: 0.5rem; font-weight: 600; }
+.bento-card p { color: var(--text-2); margin-bottom: 2rem; font-size: 0.95rem; }
+.bento-action { margin-top: auto; font-size: 0.85rem; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; }

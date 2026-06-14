@@ -533,53 +533,36 @@
     <section class="section section--off" id="contact">
       <div class="container contact__grid">
 
-        <div class="contact__info">
+        <div class="contact__header text-center" style="grid-column: 1 / -1; margin-bottom: 3rem; text-align: center;">
           <p class="label" data-i18n="contact.label">Contact</p>
           <h2 class="section__title" data-i18n="contact.heading">Travaillons ensemble</h2>
-          <p class="contact__sub" data-i18n="contact.sub">
-            Vous avez un projet, une opportunité ou simplement envie d'échanger ?
-            Je suis disponible et je réponds rapidement.
-          </p>
-
-          <ul class="contact__links">
-            <li>
-              <span class="contact__links-label" data-i18n="contact.email.label">Email</span>
-              <a href="mailto:tferrierepro@icloud.com">tferrierepro@icloud.com</a>
-            </li>
-            <li>
-              <span class="contact__links-label">GitHub</span>
-              <a href="https://github.com/thomasferriere" target="_blank" rel="noopener noreferrer">github.com/thomasferriere</a>
-            </li>
-            <li>
-              <span class="contact__links-label" data-i18n="contact.location.label">Localisation</span>
-              <span data-i18n="contact.location.value">La Réunion, France</span>
-            </li>
-          </ul>
         </div>
+        <div class="bento-contact" style="grid-column: 1 / -1; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+          
+          <a href="mailto:tferrierepro@icloud.com" class="bento-card" data-tilt data-tilt-max="2" data-aos="fade-up">
+            <div class="bento-icon">✉️</div>
+            <h3>Email</h3>
+            <p>tferrierepro@icloud.com</p>
+            <span class="bento-action">M'écrire ↗</span>
+          </a>
 
-        <form class="form" id="form" action="https://formspree.io/f/REMPLACE_PAR_TON_CODE" method="POST" novalidate>
-          <div class="form__group">
-            <label for="f-name" data-i18n="form.name">Nom</label>
-            <input id="f-name" type="text" name="name"
-              data-i18n-ph="form.name.ph" placeholder="Votre nom" required />
-            <span class="form__err" id="err-name"></span>
+          <a href="https://github.com/thomasferriere" target="_blank" rel="noopener noreferrer" class="bento-card" data-tilt data-tilt-max="2" data-aos="fade-up" data-aos-delay="100">
+            <div class="bento-icon">🐙</div>
+            <h3>GitHub</h3>
+            <p>github.com/thomasferriere</p>
+            <span class="bento-action">Voir le code ↗</span>
+          </a>
+
+          <div class="bento-card bento-card--location" data-tilt data-tilt-max="2" data-aos="fade-up" data-aos-delay="200">
+            <div class="status-indicator" style="margin-bottom: 1rem;">
+              <span class="status-dot status-dot--green"></span>
+              <span class="status-ping"></span>
+            </div>
+            <h3>Localisation</h3>
+            <p>La Réunion, France (UTC+4)</p>
+            <span class="bento-action" style="color: var(--text-2);">Disponible pour échanger</span>
           </div>
-          <div class="form__group">
-            <label for="f-email" data-i18n="form.email">Email</label>
-            <input id="f-email" type="email" name="email"
-              data-i18n-ph="form.email.ph" placeholder="votre@email.com" required />
-            <span class="form__err" id="err-email"></span>
-          </div>
-          <div class="form__group">
-            <label for="f-msg" data-i18n="form.message">Message</label>
-            <textarea id="f-msg" name="message" rows="5"
-              data-i18n-ph="form.message.ph" placeholder="Votre message..." required></textarea>
-            <span class="form__err" id="err-msg"></span>
-          </div>
-          <button type="submit" class="btn btn--dark btn--block" id="form-btn">
-            <span data-i18n="form.submit">Envoyer</span>
-          </button>
-        </form>
+        </div>
 
       </div>
     </section>
