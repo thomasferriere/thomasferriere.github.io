@@ -20,6 +20,7 @@
         <a href="#about"    class="nav__link" data-i18n="nav.about">À propos</a>
         <a href="#skills"   class="nav__link" data-i18n="nav.skills">Compétences</a>
         <a href="#projects" class="nav__link" data-i18n="nav.projects">Projets</a>
+        <a href="#lab"      class="nav__link" data-i18n="nav.lab">Lab &amp; DevOps</a>
         <a href="#contact"  class="nav__link" data-i18n="nav.contact">Contact</a>
       </nav>
 
@@ -276,9 +277,94 @@
     </section>
 
     <!-- ======================================================
+         DEVOPS & LAB
+    ====================================================== -->
+    <section class="section" id="lab">
+      <div class="container">
+
+        <div class="section__header">
+          <p class="label" data-i18n="lab.label">Infrastructure &amp; DevOps</p>
+          <h2 class="section__title" data-i18n="lab.heading">Mon Homelab &amp; DevOps</h2>
+        </div>
+
+        <div class="lab__grid">
+          <!-- Terminal -->
+          <div class="terminal-container">
+            <div class="terminal-header">
+              <div class="terminal-buttons">
+                <span class="terminal-btn terminal-btn--close"></span>
+                <span class="terminal-btn terminal-btn--minimize"></span>
+                <span class="terminal-btn terminal-btn--maximize"></span>
+              </div>
+              <span class="terminal-title">thomas@homelab:~</span>
+              <div class="terminal-status">
+                <span class="status-dot status-dot--green"></span>
+                <span class="status-text">Host: Online</span>
+              </div>
+            </div>
+            
+            <div class="terminal-toolbar">
+              <button class="term-tool-btn" data-cmd="sysinfo">sysinfo</button>
+              <button class="term-tool-btn" data-cmd="docker">docker ps</button>
+              <button class="term-tool-btn" data-cmd="network">network</button>
+              <button class="term-tool-btn" data-cmd="clear">clear</button>
+            </div>
+
+            <div class="terminal-body" id="term-body">
+              <div class="terminal-output">
+                <span class="terminal-prompt">thomas@homelab:~ $</span> <span class="typed-text">welcome</span>
+                <p class="term-welcome-msg" data-i18n="lab.terminal.welcome">Bienvenue sur la console Homelab. Cliquez sur les boutons ci-dessus pour lancer des commandes.</p>
+              </div>
+              
+              <div class="terminal-input-line" id="term-input-line">
+                <span class="terminal-prompt">thomas@homelab:~ $</span>
+                <input type="text" class="terminal-input" id="term-input" autocomplete="off" spellcheck="false" aria-label="Terminal input" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Description and features -->
+          <div class="lab__info">
+            <h3 class="lab__subheading" data-i18n="lab.info.sub">Infrastructure &amp; Self-Hosting</h3>
+            <p class="lab__text" data-i18n="lab.info.p1">
+              J'auto-héberge mes outils de développement et de divertissement sur un serveur dédié sous Debian. Cet environnement de laboratoire me permet de mettre en pratique Docker, l'administration système Linux et la sécurité réseau.
+            </p>
+            <p class="lab__text" data-i18n="lab.info.p2">
+              L'accès à distance est entièrement sécurisé via Tailscale (VPN Mesh privé) et les flux internes sont monitorés en permanence pour garantir la disponibilité.
+            </p>
+            <div class="lab__features">
+              <div class="lab-feature">
+                <div class="lab-feature__icon">🐳</div>
+                <div>
+                  <h4 class="lab-feature__title">Docker &amp; Compose</h4>
+                  <p class="lab-feature__desc" data-i18n="lab.feat.docker">Conteneurisation et orchestration des applications.</p>
+                </div>
+              </div>
+              <div class="lab-feature">
+                <div class="lab-feature__icon">🔒</div>
+                <div>
+                  <h4 class="lab-feature__title">Tailscale &amp; WireGuard</h4>
+                  <p class="lab-feature__desc" data-i18n="lab.feat.vpn">Réseau maillé sécurisé pour un accès distant sans ouvrir de ports sur ma box.</p>
+                </div>
+              </div>
+              <div class="lab-feature">
+                <div class="lab-feature__icon">📈</div>
+                <div>
+                  <h4 class="lab-feature__title">Netdata &amp; Kuma</h4>
+                  <p class="lab-feature__desc" data-i18n="lab.feat.monitor">Suivi des ressources système et alertes de disponibilité.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================
          CONTACT
     ====================================================== -->
-    <section class="section" id="contact">
+    <section class="section section--off" id="contact">
       <div class="container contact__grid">
 
         <div class="contact__info">

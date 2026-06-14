@@ -584,6 +584,235 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 /* ================================================================
+   DEVOPS & LAB
+   ================================================================ */
+.lab__grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 4.5rem;
+  align-items: start;
+}
+
+.lab__subheading {
+  font-size: 1.25rem;
+  font-weight: 650;
+  letter-spacing: -0.025em;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.lab__text {
+  font-size: 0.95rem;
+  color: var(--text-2);
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+}
+
+.lab__features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.lab-feature {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.lab-feature__icon {
+  font-size: 1.35rem;
+  background: var(--off);
+  border: 1px solid var(--border);
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-xs);
+}
+
+.lab-feature__title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.2rem;
+}
+
+.lab-feature__desc {
+  font-size: 0.85rem;
+  color: var(--text-2);
+  line-height: 1.5;
+}
+
+/* Terminal Styles */
+.terminal-container {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 420px;
+}
+
+.terminal-header {
+  background: #161b22;
+  border-bottom: 1px solid #30363d;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.terminal-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.terminal-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.terminal-btn--close { background: #ff5f56; }
+.terminal-btn--minimize { background: #ffbd2e; }
+.terminal-btn--maximize { background: #27c93f; }
+
+.terminal-title {
+  font-size: 0.78rem;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #8b949e;
+  font-weight: 500;
+}
+
+.terminal-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-dot--green {
+  background: #2ea043;
+  box-shadow: 0 0 8px #2ea043;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.9); opacity: 0.8; }
+  50% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.8; }
+}
+
+.status-text {
+  font-size: 0.72rem;
+  color: #8b949e;
+}
+
+.terminal-toolbar {
+  background: #161b22;
+  border-bottom: 1px solid #21262d;
+  padding: 0.4rem 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.term-tool-btn {
+  background: #21262d;
+  border: 1px solid #30363d;
+  color: #c9d1d9;
+  font-size: 0.72rem;
+  font-family: monospace;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  outline: none;
+}
+
+.term-tool-btn:hover {
+  background: #30363d;
+  border-color: #8b949e;
+  color: #f0f6fc;
+}
+
+.terminal-body {
+  padding: 1rem;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: #c9d1d9;
+  overflow-y: auto;
+  flex: 1;
+  text-align: left;
+}
+
+.terminal-prompt {
+  color: #58a6ff;
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+.typed-text {
+  color: #ff7b72;
+}
+
+.term-welcome-msg {
+  color: #8b949e;
+  margin-top: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.terminal-output-block {
+  margin-bottom: 1rem;
+}
+
+.terminal-output-line {
+  margin-bottom: 0.25rem;
+}
+
+.terminal-output-text {
+  white-space: pre-wrap;
+  color: #c9d1d9;
+  margin-top: 0.25rem;
+}
+
+.terminal-output-text b {
+  color: #f0f6fc;
+  font-weight: 600;
+}
+
+.terminal-input-line {
+  display: flex;
+  align-items: center;
+}
+
+.terminal-input {
+  background: transparent;
+  border: none;
+  color: #c9d1d9;
+  font-family: inherit;
+  font-size: inherit;
+  flex: 1;
+  outline: none;
+  caret-color: #58a6ff;
+  padding: 0;
+}
+
+/* ================================================================
    CONTACT
    ================================================================ */
 .contact__grid {
@@ -707,7 +936,9 @@ button { font-family: inherit; cursor: pointer; }
 .about__text,
 .about__facts,
 .contact__info,
-.form {
+.form,
+.terminal-container,
+.lab__info {
   opacity: 0;
   transform: translateY(16px);
   transition: opacity 0.55s var(--ease), transform 0.55s var(--ease);
@@ -715,7 +946,8 @@ button { font-family: inherit; cursor: pointer; }
 
 .card.visible, .skill-group.visible, .fact.visible, .cert-item.visible,
 .about__text.visible, .about__facts.visible,
-.contact__info.visible, .form.visible {
+.contact__info.visible, .form.visible,
+.terminal-container.visible, .lab__info.visible {
   opacity: 1;
   transform: none;
 }
@@ -769,6 +1001,7 @@ button { font-family: inherit; cursor: pointer; }
   .about__grid   { grid-template-columns: 1fr; gap: 3rem; }
   .contact__grid { grid-template-columns: 1fr; gap: 3rem; }
   .skills__grid  { grid-template-columns: 1fr 1fr; }
+  .lab__grid     { grid-template-columns: 1fr; gap: 3rem; }
 }
 
 /* ---- mobile nav ---- */

@@ -104,6 +104,18 @@ const TRANSLATIONS = {
     'err.email.invalid': 'Adresse email invalide.',
     'err.msg.empty':     'Le message est requis.',
     'err.msg.short':     'Le message doit contenir au moins 10 caractères.',
+
+    /* lab */
+    'nav.lab':              'Lab & DevOps',
+    'lab.label':            'Infrastructure & DevOps',
+    'lab.heading':          'Mon Homelab & DevOps',
+    'lab.terminal.welcome': 'Bienvenue sur la console Homelab. Cliquez sur les boutons ci-dessus pour lancer des commandes ou saisissez "help".',
+    'lab.info.sub':         'Infrastructure & Auto-hébergement',
+    'lab.info.p1':          "J'auto-héberge mes outils de développement et de divertissement sur un serveur dédié sous Debian. Cet environnement de laboratoire me permet de mettre en pratique Docker, l'administration système Linux et la sécurité réseau.",
+    'lab.info.p2':          "L'accès à distance est entièrement sécurisé via Tailscale (VPN Mesh privé) et les flux internes sont monitorés en permanence pour garantir la disponibilité.",
+    'lab.feat.docker':      'Conteneurisation et orchestration des applications.',
+    'lab.feat.vpn':         'Réseau maillé sécurisé pour un accès distant sans ouvrir de ports sur ma box.',
+    'lab.feat.monitor':     'Suivi des ressources système et alertes de disponibilité.',
   },
 
   en: {
@@ -203,6 +215,18 @@ const TRANSLATIONS = {
     'err.email.invalid': 'Invalid email address.',
     'err.msg.empty':     'Message is required.',
     'err.msg.short':     'Message must be at least 10 characters.',
+
+    /* lab */
+    'nav.lab':              'Lab & DevOps',
+    'lab.label':            'Infrastructure & DevOps',
+    'lab.heading':          'My Homelab & DevOps',
+    'lab.terminal.welcome': 'Welcome to the Homelab console. Click the buttons above to run commands or type "help".',
+    'lab.info.sub':         'Infrastructure & Self-Hosting',
+    'lab.info.p1':          'I self-host my development and media tools on a dedicated Debian home server. This laboratory environment allows me to put Docker, Linux system administration, and network security into practice.',
+    'lab.info.p2':          'Remote access is fully secured via Tailscale (private mesh VPN), and internal traffic is monitored constantly to ensure high availability.',
+    'lab.feat.docker':      'Containerisation and orchestration of services.',
+    'lab.feat.vpn':         'Secured mesh network for remote access without exposing public ports.',
+    'lab.feat.monitor':     'System resource monitoring and uptime alerts.',
   },
 };
 
@@ -308,7 +332,7 @@ const revealObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.08 });
 
 document.querySelectorAll(
-  '.card, .skill-group, .fact, .cert-item, .about__text, .about__facts, .contact__info, .form'
+  '.card, .skill-group, .fact, .cert-item, .about__text, .about__facts, .contact__info, .form, .terminal-container, .lab__info'
 ).forEach(el => revealObserver.observe(el));
 
 /* ================================================================
@@ -375,3 +399,166 @@ form?.addEventListener('submit', e => {
    ================================================================ */
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+
+/* ================================================================
+   INTERACTIVE TERMINAL
+   ================================================================ */
+const termInput = document.getElementById('term-input');
+const termBody = document.getElementById('term-body');
+
+const SYSINFO_FR = `
+<b>Système :</b> Debian GNU/Linux 12 (bookworm)
+<b>Kernel :</b> Linux 6.1.0-21-amd64 x86_64
+<b>Machine :</b> Homelab Server (Intel i5-8400 @ 2.80GHz, 32GB RAM)
+<b>Uptime :</b> Up 42 jours, 12 heures, 4 minutes
+<b>Ressources :</b> 
+  ├─ CPU : [██░░░░░░░░] 22.4% (6 Cores)
+  ├─ RAM : [██████░░░░] 18.2 GB / 32 GB (56.8%)
+  └─ Disk : [████░░░░░░] 412 GB / 1 TB (41.2%)
+`;
+
+const SYSINFO_EN = `
+<b>OS:</b> Debian GNU/Linux 12 (bookworm)
+<b>Kernel:</b> Linux 6.1.0-21-amd64 x86_64
+<b>Host:</b> Homelab Server (Intel i5-8400 @ 2.80GHz, 32GB RAM)
+<b>Uptime:</b> Up 42 days, 12 hours, 4 minutes
+<b>Resources:</b> 
+  ├─ CPU: [██░░░░░░░░] 22.4% (6 Cores)
+  ├─ RAM: [██████░░░░] 18.2 GB / 32 GB (56.8%)
+  └─ Disk: [████░░░░░░] 412 GB / 1 TB (41.2%)
+`;
+
+const DOCKER_FR = `
+<b>CONTAINER ID   IMAGE                 STATUS         PORTS</b>
+3a19fc2c4b8e   jellyfin/jellyfin     Up 5 days      127.0.0.1:8096->8096/tcp
+d7a46e12bb03   pihole/pihole         Up 42 days     53/udp, 53/tcp, 80/tcp
+8f828a2a88e9   louislam/uptime-kuma  Up 12 days     127.0.0.1:3001->3001/tcp
+9c8a77b10291   portainer/portainer   Up 42 days     127.0.0.1:9443->9443/tcp
+0e118ba8e34f   homelab-supervision   Up 12 days     127.0.0.1:5000->5000/tcp (Flask API)
+`;
+
+const DOCKER_EN = `
+<b>CONTAINER ID   IMAGE                 STATUS         PORTS</b>
+3a19fc2c4b8e   jellyfin/jellyfin     Up 5 days      127.0.0.1:8096->8096/tcp
+d7a46e12bb03   pihole/pihole         Up 42 days     53/udp, 53/tcp, 80/tcp
+8f828a2a88e9   louislam/uptime-kuma  Up 12 days     127.0.0.1:3001->3001/tcp
+9c8a77b10291   portainer/portainer   Up 42 days     127.0.0.1:9443->9443/tcp
+0e118ba8e34f   homelab-supervision   Up 12 days     127.0.0.1:5000->5000/tcp (Flask API)
+`;
+
+const NETWORK_FR = `
+<b>Réseau VPN Mesh (Tailscale) :</b>
+  ├─ Adresse IP locale VPN : 100.82.14.92 (Interface: tailscale0)
+  ├─ Peer local : macbook-pro (Autorisé)
+  └─ Chiffrement : WireGuard Noise Protocol
+<b>Firewall (UFW) :</b>
+  ├─ Entrant par défaut : REJECT
+  ├─ Sortant par défaut : ALLOW
+  └─ Règles actives :
+       ├─ SSH (port 22) : Limité à tailscale0
+       └─ Portainer/Jellyfin : Limité au localhost (Reverse Proxy par Nginx)
+`;
+
+const NETWORK_EN = `
+<b>Mesh VPN Network (Tailscale):</b>
+  ├─ Local VPN IP: 100.82.14.92 (Interface: tailscale0)
+  ├─ Local Peer: macbook-pro (Authorized)
+  └─ Encryption: WireGuard Noise Protocol
+<b>Firewall (UFW):</b>
+  ├─ Default Inbound: REJECT
+  ├─ Default Outbound: ALLOW
+  └─ Active Rules:
+       ├─ SSH (port 22): Limited to tailscale0
+       └─ Portainer/Jellyfin: Limited to localhost (Proxied via Nginx)
+`;
+
+const HELP_FR = `
+Commandes disponibles :
+  <b>sysinfo</b> : Afficher les spécifications système et les ressources.
+  <b>docker</b>  : Lister les conteneurs Docker actifs.
+  <b>network</b> : Afficher l'état du VPN Tailscale et du Pare-feu.
+  <b>clear</b>   : Effacer l'écran du terminal.
+`;
+
+const HELP_EN = `
+Available commands:
+  <b>sysinfo</b> : Display system specifications and resources.
+  <b>docker</b>  : List active Docker containers.
+  <b>network</b> : Show Tailscale VPN and Firewall status.
+  <b>clear</b>   : Clear the terminal screen.
+`;
+
+function escapeHtml(text) {
+  return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
+function scrollTerminal() {
+  if (termBody) termBody.scrollTop = termBody.scrollHeight;
+}
+
+function termExecute(command) {
+  if (!termBody) return;
+  const cmd = command.toLowerCase().trim();
+  
+  // Create output block
+  const outputBlock = document.createElement('div');
+  outputBlock.className = 'terminal-output-block';
+  
+  // Add command line
+  const cmdLine = document.createElement('div');
+  cmdLine.className = 'terminal-output-line';
+  cmdLine.innerHTML = `<span class="terminal-prompt">thomas@homelab:~ $</span> <span class="typed-text">${escapeHtml(command)}</span>`;
+  outputBlock.appendChild(cmdLine);
+  
+  const content = document.createElement('p');
+  content.className = 'terminal-output-text';
+  
+  if (cmd === 'sysinfo') {
+    content.innerHTML = lang === 'fr' ? SYSINFO_FR : SYSINFO_EN;
+  } else if (cmd === 'docker' || cmd === 'docker ps') {
+    content.innerHTML = lang === 'fr' ? DOCKER_FR : DOCKER_EN;
+  } else if (cmd === 'network') {
+    content.innerHTML = lang === 'fr' ? NETWORK_FR : NETWORK_EN;
+  } else if (cmd === 'clear') {
+    const outputs = termBody.querySelectorAll('.terminal-output-block');
+    outputs.forEach(o => o.remove());
+    const welcome = termBody.querySelector('.terminal-output');
+    if (welcome) welcome.style.display = 'none';
+    return;
+  } else if (cmd === 'help') {
+    content.innerHTML = lang === 'fr' ? HELP_FR : HELP_EN;
+  } else if (cmd === '') {
+    outputBlock.appendChild(content);
+    termBody.insertBefore(outputBlock, document.getElementById('term-input-line'));
+    scrollTerminal();
+    return;
+  } else {
+    content.innerHTML = lang === 'fr' 
+      ? `Commande inconnue: <b>${escapeHtml(cmd)}</b>. Saisissez <b>help</b> pour la liste des commandes.`
+      : `Command not found: <b>${escapeHtml(cmd)}</b>. Type <b>help</b> for a list of commands.`;
+  }
+  
+  outputBlock.appendChild(content);
+  termBody.insertBefore(outputBlock, document.getElementById('term-input-line'));
+  scrollTerminal();
+}
+
+document.querySelectorAll('.term-tool-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const cmd = btn.dataset.cmd;
+    termExecute(cmd);
+  });
+});
+
+termInput?.addEventListener('keydown', e => {
+  if (e.key === 'Enter') {
+    const val = termInput.value;
+    termExecute(val);
+    termInput.value = '';
+  }
+});
+
+termBody?.addEventListener('click', () => {
+  termInput?.focus();
+});
