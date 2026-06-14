@@ -145,8 +145,8 @@ const TRANSLATIONS = {
 
     /* lab notes card */
     'proj.lab.title': 'Lab Notes & Research',
-    'proj.lab.desc': "Journal technique : recherche sur l'optimisation des LLMs locaux, cache MD5, et sécurité des réseaux maillés.",
-    'proj.lab.action': 'Accéder aux notes ↗',
+    'proj.lab.desc': "Journal technique : recherche sur l'optimisation des LLMs locaux, cache MD5, et sécurité réseaux.",
+    'proj.lab.action': 'Voir les notes ↗',
   },
 
   en: {
@@ -278,8 +278,8 @@ const TRANSLATIONS = {
 
     /* lab notes card */
     'proj.lab.title': 'Lab Notes & Research',
-    'proj.lab.desc': 'Technical journal: research on local LLM optimization, MD5 cache, and mesh network security.',
-    'proj.lab.action': 'Access notes ↗',
+    'proj.lab.desc': 'Technical journal: research on local LLM optimization, MD5 cache, and network security.',
+    'proj.lab.action': 'View notes ↗',
   },
 };
 
