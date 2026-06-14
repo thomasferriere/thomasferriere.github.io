@@ -669,3 +669,22 @@ function updateClock() {
 }
 setInterval(updateClock, 1000);
 updateClock();
+
+window.addEventListener('scroll', () => {
+  const scrolled = window.scrollY;
+  const heroTitle = document.querySelector('.hero__inner');
+  if (heroTitle) {
+    heroTitle.style.transform = `translateY(${scrolled * 0.3}px)`;
+    heroTitle.style.opacity = 1 - (scrolled / 500);
+  }
+});
+
+document.querySelectorAll('.card, .bento-card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    card.style.setProperty('--x', `${x}px`);
+    card.style.setProperty('--y', `${y}px`);
+  });
+});
