@@ -132,6 +132,21 @@ const TRANSLATIONS = {
     'hero.status.live':     'En ligne depuis La Réunion · ',
     'theme.light': 'Mode Clair',
     'theme.dark': 'Mode Sombre',
+
+    /* architecture */
+    'arch.label': 'Expertise Technique',
+    'arch.heading': 'Architecture & Méthodologie',
+    'arch.card1.title': 'Architecture Logicielle',
+    'arch.card1.desc': "Conception d'un backend asynchrone sous FastAPI. Optimisation des temps d'inférence via un système de cache MD5 sur SQLite.",
+    'arch.card2.title': 'DevOps & CI/CD',
+    'arch.card2.desc': "Pipeline d'automatisation complet avec GitHub Actions : tests, build d'images Docker, et déploiement continu sécurisé.",
+    'arch.card3.title': 'Qualité & Méthode',
+    'arch.card3.desc': "Développement piloté par la documentation, approche Clean Code, versioning strict Gitflow et monitoring haute disponibilité.",
+
+    /* lab notes card */
+    'proj.lab.title': 'Lab Notes & Research',
+    'proj.lab.desc': "Journal technique documentant mes recherches sur l'optimisation des LLMs locaux et la sécurité des réseaux maillés.",
+    'proj.lab.action': 'Lire les notes ↗',
   },
 
   en: {
@@ -250,6 +265,21 @@ const TRANSLATIONS = {
     'hero.status.live':     'Online from La Réunion · ',
     'theme.light': 'Light Mode',
     'theme.dark': 'Dark Mode',
+
+    /* architecture */
+    'arch.label': 'Technical Expertise',
+    'arch.heading': 'Architecture & Methodology',
+    'arch.card1.title': 'Software Architecture',
+    'arch.card1.desc': 'Designing an asynchronous backend using FastAPI. Inferences optimized via an MD5 caching system on SQLite.',
+    'arch.card2.title': 'DevOps & CI/CD',
+    'arch.card2.desc': 'Complete automation pipeline with GitHub Actions: testing, Docker image building, and secure continuous deployment.',
+    'arch.card3.title': 'Quality & Methodology',
+    'arch.card3.desc': 'Documentation-driven development, Clean Code approach, strict Gitflow versioning and high availability monitoring.',
+
+    /* lab notes card */
+    'proj.lab.title': 'Lab Notes & Research',
+    'proj.lab.desc': 'Technical journal documenting my research on local LLM optimization and mesh network security.',
+    'proj.lab.action': 'Read notes ↗',
   },
 };
 

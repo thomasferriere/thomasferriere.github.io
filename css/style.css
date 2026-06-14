@@ -1252,6 +1252,10 @@ body::before {
 }
 
 .bento-contact { width: 100%; }
+.bento-grid { margin-top: 2rem; }
+[data-theme="dark"] .bento-card { background: var(--bg-secondary); border: 1px solid var(--border); }
+[data-theme="light"] .bento-card { background: var(--bg-secondary); border: 1px solid var(--border); }
+
 .bento-card {
   background: var(--bg-secondary);
   border: 1px solid var(--border);
