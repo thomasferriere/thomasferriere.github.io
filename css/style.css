@@ -1254,3 +1254,9 @@ body::before {
   color: rgba(244, 247, 245, 0.7) !important;
   border-color: rgba(244, 247, 245, 0.2) !important;
 }
+
+/* Override spécifique au mode clair pour supprimer la transition boueuse */
+[data-theme="light"] .hero__fade {
+  opacity: 0;
+  pointer-events: none;
+}
