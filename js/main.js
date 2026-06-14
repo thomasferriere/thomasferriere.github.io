@@ -147,13 +147,6 @@ const TRANSLATIONS = {
     'arch.card3.title': 'Qualité & Méthode',
     'arch.card3.desc': "Développement piloté par la documentation, approche Clean Code, versioning strict Gitflow et monitoring haute disponibilité.",
 
-    /* knowledge hub */
-    'knowledge.label': 'Recherche & Veille',
-    'knowledge.heading': 'Knowledge Hub',
-    'knowledge.item1.title': 'Optimisation des LLMs Locaux',
-    'knowledge.item1.desc': "Analyse des performances d'inférence avec cache MD5.",
-    'knowledge.item2.title': 'Sécurisation Réseaux Maillés (Tailscale)',
-    'knowledge.item2.desc': 'Configuration avancée et gestion des ACLs.',
   },
 
   en: {
@@ -287,13 +280,6 @@ const TRANSLATIONS = {
     'arch.card3.title': 'Quality & Methodology',
     'arch.card3.desc': 'Documentation-driven development, Clean Code approach, strict Gitflow versioning and high availability monitoring.',
 
-    /* knowledge hub */
-    'knowledge.label': 'Research & Insights',
-    'knowledge.heading': 'Knowledge Hub',
-    'knowledge.item1.title': 'Local LLMs Optimization',
-    'knowledge.item1.desc': 'Analysis of inference performance using an MD5 cache.',
-    'knowledge.item2.title': 'Securing Mesh Networks (Tailscale)',
-    'knowledge.item2.desc': 'Advanced configuration and ACL management.',
   },
 };
 
