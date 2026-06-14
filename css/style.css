@@ -1362,3 +1362,18 @@ body::before {
   pointer-events: none;
 }
 .card:hover::before, .bento-card:hover::before { opacity: 0.15; }
+
+.knowledge-item {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--text-main);
+  transition: background 0.3s ease;
+}
+.knowledge-item:hover { background: rgba(142, 182, 155, 0.05); }
+.knowledge-date { color: var(--text-3); font-family: monospace; font-size: 0.9rem; }
+.knowledge-title { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.25rem; }
+.knowledge-desc { grid-column: 2; color: var(--text-2); font-size: 0.95rem; }
+

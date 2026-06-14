@@ -143,14 +143,13 @@ const TRANSLATIONS = {
     'arch.card3.title': 'Qualité & Méthode',
     'arch.card3.desc': "Développement piloté par la documentation, approche Clean Code, versioning strict Gitflow et monitoring haute disponibilité.",
 
-    /* lab notes card */
-    'proj.lab.title': 'Lab Notes & Research',
-    'proj.lab.desc': "Journal technique : recherche sur l'optimisation des LLMs locaux, cache MD5, et sécurité réseaux.",
-    'proj.lab.action': 'Accéder aux notes ↗',
-    'proj.lab.type': 'Recherche & Documentation',
-    'proj.lab.tag1': 'Recherche',
-    'proj.lab.tag2': 'LLM',
-    'proj.lab.tag3': 'Optimisation',
+    /* knowledge hub */
+    'knowledge.label': 'Recherche & Veille',
+    'knowledge.heading': 'Knowledge Hub',
+    'knowledge.item1.title': 'Optimisation des LLMs Locaux',
+    'knowledge.item1.desc': "Analyse des performances d'inférence avec cache MD5.",
+    'knowledge.item2.title': 'Sécurisation Réseaux Maillés (Tailscale)',
+    'knowledge.item2.desc': 'Configuration avancée et gestion des ACLs.',
   },
 
   en: {
@@ -280,14 +279,13 @@ const TRANSLATIONS = {
     'arch.card3.title': 'Quality & Methodology',
     'arch.card3.desc': 'Documentation-driven development, Clean Code approach, strict Gitflow versioning and high availability monitoring.',
 
-    /* lab notes card */
-    'proj.lab.title': 'Lab Notes & Research',
-    'proj.lab.desc': 'Technical journal: research on local LLM optimization, MD5 cache, and network security.',
-    'proj.lab.action': 'Access notes ↗',
-    'proj.lab.type': 'Research & Documentation',
-    'proj.lab.tag1': 'Research',
-    'proj.lab.tag2': 'LLM',
-    'proj.lab.tag3': 'Optimization',
+    /* knowledge hub */
+    'knowledge.label': 'Research & Insights',
+    'knowledge.heading': 'Knowledge Hub',
+    'knowledge.item1.title': 'Local LLMs Optimization',
+    'knowledge.item1.desc': 'Analysis of inference performance using an MD5 cache.',
+    'knowledge.item2.title': 'Securing Mesh Networks (Tailscale)',
+    'knowledge.item2.desc': 'Advanced configuration and ACL management.',
   },
 };
 
