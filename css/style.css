@@ -1349,3 +1349,23 @@ body::before {
 }
 .card:hover::before, .bento-card:hover::before { opacity: 0.15; }
 
+/* ================================================================
+   CARTE PROJET — LIEN GITHUB
+   ================================================================ */
+.card__github-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+  font-family: var(--font-mono, monospace);
+  color: var(--text-2);
+  text-decoration: none;
+  border: 1px solid var(--text-3);
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.card__github-link:hover {
+  color: var(--text-main);
+  border-color: var(--text-2);
+}
+

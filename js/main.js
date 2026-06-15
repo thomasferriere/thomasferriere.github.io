@@ -45,7 +45,7 @@ const TRANSLATIONS = {
     'about.fact.edu.label':      'Formation',
     'about.fact.edu.value':      'Université de La Réunion',
     'about.fact.lang.label':     'Langues',
-    'about.fact.lang.value':     'Français (natif) · Anglais (B1)',
+    'about.fact.lang.value':     'Français (natif) · Anglais (intermédiaire)',
     'about.fact.interest.label': 'Intérêts',
     'about.fact.interest.value': 'Linux · Réseaux · IA · Cinéma',
 
@@ -61,9 +61,6 @@ const TRANSLATIONS = {
     'cert.1.name':     'SecNumacadémie ANSSI',
     'cert.1.detail':   'MOOC cybersécurité · 100 % aux 4 modules',
     'cert.1.date':     'Mars 2024',
-    'cert.2.name':     'Certification Pix Niveau Avancé 1',
-    'cert.2.detail':   'Score 532/895 · Université de La Réunion',
-    'cert.2.date':     'Déc. 2025',
 
     /* projects */
     'projects.label':   'Projets',
@@ -72,7 +69,7 @@ const TRANSLATIONS = {
     'proj.type.personal':    'Projet personnel',
     'proj.type.uni':         'Projet universitaire',
     'proj.type.entrepreneur':'Projet entrepreneurial',
-    'proj.type.intern':      "Stage d'observation",
+    'proj.type.data':        'Projet IA & Data',
 
     'proj.1.title': 'Serveur Linux / Homelab',
     'proj.1.desc':  "Serveur maison complet : Docker (Jellyfin, Portainer, Pi-hole), monitoring Netdata & Uptime Kuma, API Flask de supervision, réseau privé sécurisé via Tailscale.",
@@ -86,12 +83,14 @@ const TRANSLATIONS = {
     'proj.4.title': 'Gestion de ventes',
     'proj.4.desc':  "Automatisation de la gestion via Excel : tableaux croisés dynamiques, formules avancées, reporting automatisé pour le suivi des commandes et recettes.",
 
-    'proj.5.title': 'Enseignement NSI',
-    'proj.5.desc':  "Observation pédagogique au Lycée Lislet Geoffroy. Préparation de contenus et réflexion sur la didactique en Numérique & Sciences Informatiques.",
+    'proj.oracle.title': 'Oracle 2026',
+    'proj.oracle.desc':  "Pipeline de données automatisé pour la CDM 2026 : scraping ESPN & RSS presse sportive, indice de risque calculé par triggers PostgreSQL, pronostics générés par llama3 (Ollama local), dashboard FastAPI. Zéro donnée externe, zéro intervention manuelle.",
 
     'proj.type.subtext': 'Projet Ingénieur & IA',
     'proj.subtext.title': 'Subtext AI',
     'proj.subtext.desc': "Application full-stack d'analyse psychologique de scénarios propulsée par des LLMs locaux. Backend asynchrone (FastAPI), cache MD5 (SQLite), conteneurisation (Docker) et pipeline CI/CD automatisé.",
+
+    'card.github.label': 'Voir sur GitHub ↗',
 
     /* contact */
     'contact.label':          'Contact',
@@ -101,6 +100,8 @@ const TRANSLATIONS = {
     'contact.email.action':   "M'écrire ↗",
     'contact.github.label':   'GitHub',
     'contact.github.action':  'Voir le code ↗',
+    'contact.linkedin.label': 'LinkedIn',
+    'contact.linkedin.action':'Mon profil ↗',
     'contact.location.label': 'Localisation',
     'contact.location.value': 'La Réunion, France (UTC+4)',
     'contact.location.status': 'Disponible pour échanger',
@@ -178,7 +179,7 @@ const TRANSLATIONS = {
     'about.fact.edu.label':      'Education',
     'about.fact.edu.value':      'University of La Réunion',
     'about.fact.lang.label':     'Languages',
-    'about.fact.lang.value':     'French (native) · English (B1)',
+    'about.fact.lang.value':     'French (native) · English (intermediate)',
     'about.fact.interest.label': 'Interests',
     'about.fact.interest.value': 'Linux · Networking · AI · Cinema',
 
@@ -194,9 +195,6 @@ const TRANSLATIONS = {
     'cert.1.name':     'SecNumacadémie ANSSI',
     'cert.1.detail':   'Cybersecurity MOOC · 100% on all 4 modules',
     'cert.1.date':     'March 2024',
-    'cert.2.name':     'Pix Certification Advanced Level 1',
-    'cert.2.detail':   'Score 532/895 · University of La Réunion',
-    'cert.2.date':     'Dec. 2025',
 
     /* projects */
     'projects.label':   'Projects',
@@ -205,7 +203,7 @@ const TRANSLATIONS = {
     'proj.type.personal':    'Personal project',
     'proj.type.uni':         'University project',
     'proj.type.entrepreneur':'Entrepreneurial project',
-    'proj.type.intern':      'Observation internship',
+    'proj.type.data':        'AI & Data Project',
 
     'proj.1.title': 'Linux Server / Homelab',
     'proj.1.desc':  "Full home server running Linux with Docker (Jellyfin, Portainer, Pi-hole), Netdata & Uptime Kuma monitoring, Flask supervision API, and a private network via Tailscale.",
@@ -219,12 +217,14 @@ const TRANSLATIONS = {
     'proj.4.title': 'Sales Management',
     'proj.4.desc':  "Automated sales management with Excel: pivot tables, advanced formulas, and automated reporting for order and revenue tracking.",
 
-    'proj.5.title': 'NSI Teaching',
-    'proj.5.desc':  "Pedagogical observation at Lycée Lislet Geoffroy. Content preparation and discussion on teaching methods in Digital & Computer Science.",
+    'proj.oracle.title': 'Oracle 2026',
+    'proj.oracle.desc':  "Automated data pipeline for the 2026 World Cup: ESPN & sports-press RSS scraping, risk index computed via PostgreSQL triggers, match predictions from local llama3 (Ollama), FastAPI dashboard. Zero external data, zero manual intervention.",
 
     'proj.type.subtext': 'Engineering & AI Project',
     'proj.subtext.title': 'Subtext AI',
     'proj.subtext.desc': "Full-stack psychological screenplay analysis app powered by local LLMs. Features an asynchronous backend (FastAPI), MD5 caching (SQLite), Docker containerisation, and an automated CI/CD pipeline.",
+
+    'card.github.label': 'View on GitHub ↗',
 
     /* contact */
     'contact.label':          'Contact',
@@ -234,6 +234,8 @@ const TRANSLATIONS = {
     'contact.email.action':   'Write me ↗',
     'contact.github.label':   'GitHub',
     'contact.github.action':  'View code ↗',
+    'contact.linkedin.label': 'LinkedIn',
+    'contact.linkedin.action':'My profile ↗',
     'contact.location.label': 'Location',
     'contact.location.value': 'La Réunion, France (UTC+4)',
     'contact.location.status': 'Available to chat',

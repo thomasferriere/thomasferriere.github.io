@@ -145,7 +145,7 @@
           </div>
           <div class="fact">
             <dt class="fact__label" data-i18n="about.fact.lang.label">Langues</dt>
-            <dd class="fact__value" data-i18n="about.fact.lang.value">Français (natif) · Anglais (B1)</dd>
+            <dd class="fact__value" data-i18n="about.fact.lang.value">Français (natif) · Anglais (intermédiaire)</dd>
           </div>
           <div class="fact">
             <dt class="fact__label" data-i18n="about.fact.interest.label">Intérêts</dt>
@@ -221,13 +221,6 @@
               </div>
               <span class="cert-item__date" data-i18n="cert.1.date">Mars 2024</span>
             </div>
-            <div class="cert-item" data-aos="fade-up" data-aos-delay="100">
-              <div>
-                <p class="cert-item__name" data-i18n="cert.2.name">Certification Pix Niveau Avancé 1</p>
-                <p class="cert-item__detail" data-i18n="cert.2.detail">Score 532/895 · Université de La Réunion</p>
-              </div>
-              <span class="cert-item__date" data-i18n="cert.2.date">Déc. 2025</span>
-            </div>
           </div>
         </div>
 
@@ -286,6 +279,7 @@
             <ul class="card__tags">
               <li>Python</li><li>FastAPI</li><li>Docker</li><li>CI/CD</li><li>Ollama</li>
             </ul>
+            <a href="https://github.com/thomasferriere/subtext-ai" target="_blank" rel="noopener noreferrer" class="card__github-link" data-i18n="card.github.label">Voir sur GitHub ↗</a>
           </article>
 
           <article class="card" data-tilt data-tilt-max="4" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.08" data-aos="fade-up">
@@ -418,37 +412,57 @@
           <article class="card" data-tilt data-tilt-max="4" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.08" data-aos="fade-up">
             <svg class="card__icon card__icon--bilingue" width="100%" height="180px" viewBox="0 0 400 180" xmlns="http://www.w3.org/2000/svg">
               <defs>
-                <linearGradient id="grad-teaching" x1="0%" y1="0%" x2="100%" y2="100%">
+                <linearGradient id="grad-oracle" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop offset="0%" stop-color="var(--bg-primary)" stop-opacity="0.1" />
                   <stop offset="100%" stop-color="var(--text-main)" stop-opacity="0.2" />
                 </linearGradient>
               </defs>
-              <rect width="100%" height="100%" rx="8" fill="url(#grad-teaching)" />
-              <g transform="translate(110, 25)">
-                <rect width="180" height="110" rx="4" fill="none" stroke="var(--text-main)" stroke-width="2.5" />
-                <path d="M 40,110 L 20,135 M 140,110 L 160,135" stroke="var(--text-main)" stroke-width="2.5" stroke-linecap="round" />
-                <text x="15" y="25" fill="var(--text-main)" font-size="12" font-family="monospace" font-weight="bold">def nsi_init():</text>
-                <text x="35" y="45" fill="var(--text-2)" font-size="12" font-family="monospace">print("Hello")</text>
-                <line x1="150" y1="80" x2="110" y2="40" stroke="var(--text-3)" stroke-width="3" stroke-linecap="round" />
+              <rect width="100%" height="100%" rx="8" fill="url(#grad-oracle)" />
+              <!-- Source : API/RSS -->
+              <rect x="20" y="65" width="60" height="50" rx="4" fill="none" stroke="var(--text-main)" stroke-width="2" />
+              <line x1="30" y1="80" x2="70" y2="80" stroke="var(--text-2)" stroke-width="1.5" />
+              <line x1="30" y1="92" x2="65" y2="92" stroke="var(--text-2)" stroke-width="1.5" />
+              <line x1="30" y1="104" x2="60" y2="104" stroke="var(--text-2)" stroke-width="1.5" />
+              <!-- Flèche -->
+              <path d="M 82,90 L 110,90" stroke="var(--text-main)" stroke-width="2" />
+              <!-- Base de données -->
+              <ellipse cx="140" cy="75" rx="25" ry="8" fill="none" stroke="var(--text-main)" stroke-width="2" />
+              <rect x="115" y="75" width="50" height="30" fill="none" stroke="var(--text-main)" stroke-width="2" />
+              <ellipse cx="140" cy="105" rx="25" ry="8" fill="none" stroke="var(--text-main)" stroke-width="2" />
+              <!-- Flèche -->
+              <path d="M 168,90 L 195,90" stroke="var(--text-main)" stroke-width="2" />
+              <!-- Nœud IA -->
+              <circle cx="220" cy="90" r="22" fill="none" stroke="var(--text-main)" stroke-width="2" />
+              <circle cx="220" cy="90" r="8" fill="var(--text-3)" />
+              <line x1="220" y1="62" x2="220" y2="50" stroke="var(--text-2)" stroke-width="1.5" />
+              <line x1="242" y1="75" x2="254" y2="68" stroke="var(--text-2)" stroke-width="1.5" />
+              <line x1="242" y1="105" x2="254" y2="112" stroke="var(--text-2)" stroke-width="1.5" />
+              <!-- Flèche -->
+              <path d="M 244,90 L 270,90" stroke="var(--text-main)" stroke-width="2" />
+              <!-- Dashboard -->
+              <rect x="270" y="55" width="100" height="70" rx="4" fill="none" stroke="var(--text-main)" stroke-width="2" />
+              <rect x="280" y="65" width="30" height="40" rx="2" fill="var(--text-3)" opacity="0.5" />
+              <rect x="318" y="75" width="20" height="30" rx="2" fill="var(--text-3)" opacity="0.5" />
+              <rect x="346" y="82" width="16" height="23" rx="2" fill="var(--text-3)" opacity="0.5" />
+              <!-- Labels bilingues -->
+              <g class="svg-lang-fr" transform="translate(20,148)">
+                <text fill="var(--text-main)" font-size="9" font-family="monospace" font-weight="bold">API → PostgreSQL → LLM → Dashboard</text>
               </g>
-              <g class="svg-lang-fr" transform="translate(300, 80)">
-                <text x="0" y="0" fill="var(--text-main)" font-size="10" font-family="monospace" font-weight="bold">DIDACTIQUE</text>
-                <text x="0" y="15" fill="var(--text-3)" font-size="8" font-family="monospace">NS INFO</text>
-              </g>
-              <g class="svg-lang-en" transform="translate(300, 80)">
-                <text x="0" y="0" fill="var(--text-main)" font-size="10" font-family="monospace" font-weight="bold">TEACHING</text>
-                <text x="0" y="15" fill="var(--text-3)" font-size="8" font-family="monospace">CS INTRO</text>
+              <g class="svg-lang-en" transform="translate(20,148)">
+                <text fill="var(--text-main)" font-size="9" font-family="monospace" font-weight="bold">API → PostgreSQL → LLM → Dashboard</text>
               </g>
             </svg>
-            <p class="card__type" data-i18n="proj.type.intern">Stage d'observation</p>
-            <h3 class="card__title" data-i18n="proj.5.title">Enseignement NSI</h3>
-            <p class="card__desc" data-i18n="proj.5.desc">
-              Observation pédagogique au Lycée Lislet Geoffroy. Préparation de
-              contenus et réflexion sur la didactique en Numérique &amp; Sciences Informatiques.
+            <p class="card__type" data-i18n="proj.type.data">Projet IA &amp; Data</p>
+            <h3 class="card__title" data-i18n="proj.oracle.title">Oracle 2026</h3>
+            <p class="card__desc" data-i18n="proj.oracle.desc">
+              Pipeline de données automatisé pour la CDM 2026 : scraping ESPN &amp; RSS presse
+              sportive, indice de risque calculé par triggers PostgreSQL, pronostics générés
+              par llama3 (Ollama local), dashboard FastAPI. Zéro donnée externe, zéro intervention manuelle.
             </p>
             <ul class="card__tags">
-              <li>NSI</li><li>Pédagogie</li><li>La Réunion</li>
+              <li>Python</li><li>FastAPI</li><li>PostgreSQL</li><li>Ollama</li><li>CI/CD</li>
             </ul>
+            <a href="https://github.com/thomasferriere/WorldCup-AI-Predictor" target="_blank" rel="noopener noreferrer" class="card__github-link" data-i18n="card.github.label">Voir sur GitHub ↗</a>
           </article>
 
 
@@ -600,6 +614,19 @@
             <h3 data-i18n="contact.github.label">GitHub</h3>
             <p>github.com/thomasferriere</p>
             <span class="bento-action" data-i18n="contact.github.action">Voir le code ↗</span>
+          </a>
+
+          <a href="https://www.linkedin.com/in/thomas-ferriere-a63403327/" target="_blank" rel="noopener noreferrer" class="bento-card" data-tilt data-tilt-max="2" data-aos="fade-up" data-aos-delay="225" data-aos-duration="600">
+            <div class="bento-icon">
+              <svg viewBox="0 0 24 24" width="32" height="32" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </div>
+            <h3 data-i18n="contact.linkedin.label">LinkedIn</h3>
+            <p>linkedin.com/in/thomas-ferriere</p>
+            <span class="bento-action" data-i18n="contact.linkedin.action">Mon profil ↗</span>
           </a>
 
           <div class="bento-card bento-card--location" data-tilt data-tilt-max="2" data-aos="fade-up" data-aos-delay="300" data-aos-duration="600">
